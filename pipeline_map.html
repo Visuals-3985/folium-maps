@@ -1,0 +1,3514 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a2a66bf4af53b111efa86c1a728af8ab {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 30px; left: 30px; width: 240px; height: 120px; 
+     background-color: white; z-index:9999; font-size:14px;
+     border:2px solid grey; border-radius:6px; padding: 10px;">
+<b>Pipeline Status Legend</b><br>
+<i style="background:green; width:12px; height:12px; float:left; margin-right:8px; opacity:0.8;"></i> Completed<br>
+<i style="background:orange; width:12px; height:12px; float:left; margin-right:8px; opacity:0.8;"></i> Planned<br>
+<i style="background:blue; width:12px; height:12px; float:left; margin-right:8px; opacity:0.8;"></i> Work Not Yet Started
+</div>
+    
+            <div class="folium-map" id="map_a2a66bf4af53b111efa86c1a728af8ab" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a2a66bf4af53b111efa86c1a728af8ab = L.map(
+                "map_a2a66bf4af53b111efa86c1a728af8ab",
+                {
+                    center: [22.45861703641566, 71.47902378032036],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_265b15316d4bd67b1cc2ea12fb5d51f8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_265b15316d4bd67b1cc2ea12fb5d51f8.addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var poly_line_40b759bad4b741386bd973677398656b = L.polyline(
+                [[22.538931447205574, 71.6539648245413], [22.53873073518921, 71.65350334285314], [22.538093705038133, 71.65195867663208], [22.528141539474035, 71.63592415102853]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_31ddcf07d2c1033f8209762cab0b1f83 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9a30b152cc194558bc186cb8def4ba3c = $(`<div id="html_9a30b152cc194558bc186cb8def4ba3c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-1<br>     <b>Start Node:</b> PS-1B<br>     <b>Stop Node:</b> KHINTALA<br>     <b>MS 1726mm, Len: 2211m</b>     </div>`)[0];
+                popup_31ddcf07d2c1033f8209762cab0b1f83.setContent(html_9a30b152cc194558bc186cb8def4ba3c);
+            
+        
+
+        poly_line_40b759bad4b741386bd973677398656b.bindPopup(popup_31ddcf07d2c1033f8209762cab0b1f83)
+        ;
+
+        
+    
+    
+            var marker_3663aaf52a74a1dae659554cc79c9a33 = L.marker(
+                [22.538093705038133, 71.65195867663208],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_8277911e9f9f0d792968cda2fc49ac88 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1726mm, Len: 2211m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_3663aaf52a74a1dae659554cc79c9a33.setIcon(div_icon_8277911e9f9f0d792968cda2fc49ac88);
+            
+    
+            var poly_line_bb861bfa92e2578e22277e94e9c0d97a = L.polyline(
+                [[22.453642992332593, 71.5596485368317], [22.453119452167805, 71.55922280696915], [22.451844034141043, 71.55812458888597], [22.442512382765035, 71.547670598912], [22.433172717426135, 71.5381523145139], [22.433087288294658, 71.53806832929753]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_caaa7346bc635223b0de5c5d48a31c76 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_85620cf9b31a856541ad1e108cc58d4c = $(`<div id="html_85620cf9b31a856541ad1e108cc58d4c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-2<br>     <b>Start Node:</b> J-46<br>     <b>Stop Node:</b> KHOLADIAD<br>     <b>MS 1624mm, Len: 3184m</b>     </div>`)[0];
+                popup_caaa7346bc635223b0de5c5d48a31c76.setContent(html_85620cf9b31a856541ad1e108cc58d4c);
+            
+        
+
+        poly_line_bb861bfa92e2578e22277e94e9c0d97a.bindPopup(popup_caaa7346bc635223b0de5c5d48a31c76)
+        ;
+
+        
+    
+    
+            var marker_79225b2d15dbd4e124a9906893466499 = L.marker(
+                [22.442512382765035, 71.547670598912],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_6a6f5fef21b60169ca4ddb40ecb1f879 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 3184m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_79225b2d15dbd4e124a9906893466499.setIcon(div_icon_6a6f5fef21b60169ca4ddb40ecb1f879);
+            
+    
+            var poly_line_805260bce369fd82f3389b8d6eb9ddce = L.polyline(
+                [[22.41288377923242, 71.51910616749937], [22.409728033521347, 71.51780501540011], [22.407249474381857, 71.51032024800041], [22.405762250164276, 71.50588990792127], [22.404816457493162, 71.50460473143548], [22.404419045994864, 71.50348636438271], [22.40424320808537, 71.50302878392766]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_767ebb5f01572ef7f83df13b5b4ce9cb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_0e24b0bb14cd9215615c58498853a464 = $(`<div id="html_0e24b0bb14cd9215615c58498853a464" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-3<br>     <b>Start Node:</b> SHRIVANIYA POND<br>     <b>Stop Node:</b> J-18<br>     <b>MS 1624mm, Len: 2021m</b>     </div>`)[0];
+                popup_767ebb5f01572ef7f83df13b5b4ce9cb.setContent(html_0e24b0bb14cd9215615c58498853a464);
+            
+        
+
+        poly_line_805260bce369fd82f3389b8d6eb9ddce.bindPopup(popup_767ebb5f01572ef7f83df13b5b4ce9cb)
+        ;
+
+        
+    
+    
+            var marker_9e457869d883b97b300b10dcb82aa92b = L.marker(
+                [22.405762250164276, 71.50588990792127],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_3fcd97074ce2125956b1d70505086959 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 2021m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_9e457869d883b97b300b10dcb82aa92b.setIcon(div_icon_3fcd97074ce2125956b1d70505086959);
+            
+    
+            var poly_line_356f9be203e329860d6c751c64d6fed0 = L.polyline(
+                [[22.40424320808537, 71.50302878392766], [22.403929685153507, 71.50205184087864], [22.404134679010244, 71.49420697363517], [22.40475836597015, 71.49132451957425], [22.404262099380638, 71.48878779283012]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_a4b6c44d999e7b089e4a5fab395abbe4 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_6f544e037d6559b24e87d4b5fba20a7d = $(`<div id="html_6f544e037d6559b24e87d4b5fba20a7d" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-4<br>     <b>Start Node:</b> J-53<br>     <b>Stop Node:</b> DHARAMSALA<br>     <b>MS 1624mm, Len: 1487m</b>     </div>`)[0];
+                popup_a4b6c44d999e7b089e4a5fab395abbe4.setContent(html_6f544e037d6559b24e87d4b5fba20a7d);
+            
+        
+
+        poly_line_356f9be203e329860d6c751c64d6fed0.bindPopup(popup_a4b6c44d999e7b089e4a5fab395abbe4)
+        ;
+
+        
+    
+    
+            var marker_56b0c38b0168e61763bf67bc0248aa99 = L.marker(
+                [22.404134679010244, 71.49420697363517],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_718cc0dcb2db5dae6c392e24042ecd4f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 1487m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_56b0c38b0168e61763bf67bc0248aa99.setIcon(div_icon_718cc0dcb2db5dae6c392e24042ecd4f);
+            
+    
+            var poly_line_deecbd6280844067f54bd9dbef71e074 = L.polyline(
+                [[22.404262099380638, 71.48878779283012], [22.403523259679922, 71.48503827731186], [22.4036753397616, 71.48047539289145], [22.40340209093533, 71.478909218081]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_2270099841720f3f734a7165f4e49f5a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_83be7e83bcff089d5a0116a60462b81b = $(`<div id="html_83be7e83bcff089d5a0116a60462b81b" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-5<br>     <b>Start Node:</b> J-55<br>     <b>Stop Node:</b> SHRIVANIYA POND<br>     <b>MS 1624mm, Len: 1029m</b>     </div>`)[0];
+                popup_2270099841720f3f734a7165f4e49f5a.setContent(html_83be7e83bcff089d5a0116a60462b81b);
+            
+        
+
+        poly_line_deecbd6280844067f54bd9dbef71e074.bindPopup(popup_2270099841720f3f734a7165f4e49f5a)
+        ;
+
+        
+    
+    
+            var marker_3b55959a45aaa4a36ba47a8e9b43cd2b = L.marker(
+                [22.4036753397616, 71.48047539289145],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_3afda2ae444fde034fa4fdbec5dfc46b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 1029m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_3b55959a45aaa4a36ba47a8e9b43cd2b.setIcon(div_icon_3afda2ae444fde034fa4fdbec5dfc46b);
+            
+    
+            var poly_line_8bb3ec4f7738ea3955b14581a79f75dc = L.polyline(
+                [[22.40340209093533, 71.478909218081], [22.4029103255827, 71.47586248230023], [22.40168010168682, 71.47088450058094], [22.40163152658737, 71.47066065615239], [22.401679303691985, 71.47029754462729]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_d14fc8a064190dbdd3d46ec9e318f936 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_73aaa49d64a3a3584460608014d1e50d = $(`<div id="html_73aaa49d64a3a3584460608014d1e50d" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-6<br>     <b>Start Node:</b> UMAPUR<br>     <b>Stop Node:</b> ADALA,PIPALITYA,KOTADA,TR<br>     <b>MS 1624mm, Len: 911m</b>     </div>`)[0];
+                popup_d14fc8a064190dbdd3d46ec9e318f936.setContent(html_73aaa49d64a3a3584460608014d1e50d);
+            
+        
+
+        poly_line_8bb3ec4f7738ea3955b14581a79f75dc.bindPopup(popup_d14fc8a064190dbdd3d46ec9e318f936)
+        ;
+
+        
+    
+    
+            var marker_b6ab2081f431d201827c4169f854171d = L.marker(
+                [22.40168010168682, 71.47088450058094],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_e27a5ed99c9367f2834c22d94e7db01f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 911m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_b6ab2081f431d201827c4169f854171d.setIcon(div_icon_e27a5ed99c9367f2834c22d94e7db01f);
+            
+    
+            var poly_line_33496adc19d15c2d859628fac307ac0b = L.polyline(
+                [[22.433087288294658, 71.53806832929753], [22.430190369719405, 71.53541847655352], [22.42752776134911, 71.53190514409594], [22.424250711185895, 71.52815508016623], [22.42312566808704, 71.52739315840819]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_520c76051dffc5a1792195aa0328bb8d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_1cce1af9c88ea1af1f9e27d2c4106e51 = $(`<div id="html_1cce1af9c88ea1af1f9e27d2c4106e51" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-7<br>     <b>Start Node:</b> J-48<br>     <b>Stop Node:</b> J-6<br>     <b>MS 1624mm, Len: 1566m</b>     </div>`)[0];
+                popup_520c76051dffc5a1792195aa0328bb8d.setContent(html_1cce1af9c88ea1af1f9e27d2c4106e51);
+            
+        
+
+        poly_line_33496adc19d15c2d859628fac307ac0b.bindPopup(popup_520c76051dffc5a1792195aa0328bb8d)
+        ;
+
+        
+    
+    
+            var marker_9c6fd9b2f908be9cbbe2a060412b77e3 = L.marker(
+                [22.42752776134911, 71.53190514409594],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_91e1ee6d2a641ce58ad1e1bebb6cb7e4 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 1566m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_9c6fd9b2f908be9cbbe2a060412b77e3.setIcon(div_icon_91e1ee6d2a641ce58ad1e1bebb6cb7e4);
+            
+    
+            var poly_line_ef13584d3fb5d4da4f3c62c4826f6d58 = L.polyline(
+                [[22.42312566808704, 71.52739315840819], [22.422845075583584, 71.52720928340999], [22.42023878080786, 71.5246623228942], [22.416282622119905, 71.5206044562479], [22.41288377923242, 71.51910616749937]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_9f6506173805627ef7d17851222e56e6 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ce01fc7b80b3631c237c4f470de94d42 = $(`<div id="html_ce01fc7b80b3631c237c4f470de94d42" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-8<br>     <b>Start Node:</b> GADH SHIRVANIYA POND<br>     <b>Stop Node:</b> SOKHADA-1<br>     <b>MS 1624mm, Len: 1439m</b>     </div>`)[0];
+                popup_9f6506173805627ef7d17851222e56e6.setContent(html_ce01fc7b80b3631c237c4f470de94d42);
+            
+        
+
+        poly_line_ef13584d3fb5d4da4f3c62c4826f6d58.bindPopup(popup_9f6506173805627ef7d17851222e56e6)
+        ;
+
+        
+    
+    
+            var marker_d2e702287deb4b40266729a2400007bc = L.marker(
+                [22.42023878080786, 71.5246623228942],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_1287f2c307529bec1d09072900b6c1fa = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 1439m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_d2e702287deb4b40266729a2400007bc.setIcon(div_icon_1287f2c307529bec1d09072900b6c1fa);
+            
+    
+            var poly_line_4a60989e882596e4115523f2352d2053 = L.polyline(
+                [[22.528141539474035, 71.63592415102853], [22.5263485942941, 71.63404696599159], [22.52204175221587, 71.6296116872864], [22.519046825661306, 71.62682278745659], [22.5100123129559, 71.61712236033793], [22.50787007476214, 71.61425385858072], [22.495066714537604, 71.60185286813028], [22.491976044768013, 71.59791480828689], [22.489095727161832, 71.59455390616877], [22.48360665171968, 71.58945340504063], [22.474492589410957, 71.57979281931877], [22.47114074827708, 71.57638596968528], [22.466196235847498, 71.572132443666], [22.456655937224976, 71.5622259453113], [22.453642992332593, 71.5596485368317]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_2a03633f328b9d4f4fb9c61aabf2581e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8ea73264df59c9c118030aebb96bb1f4 = $(`<div id="html_8ea73264df59c9c118030aebb96bb1f4" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-9<br>     <b>Start Node:</b> J-108<br>     <b>Stop Node:</b> SOKHADA-2<br>     <b>MS 1624mm, Len: 11407m</b>     </div>`)[0];
+                popup_2a03633f328b9d4f4fb9c61aabf2581e.setContent(html_8ea73264df59c9c118030aebb96bb1f4);
+            
+        
+
+        poly_line_4a60989e882596e4115523f2352d2053.bindPopup(popup_2a03633f328b9d4f4fb9c61aabf2581e)
+        ;
+
+        
+    
+    
+            var marker_6c97cef65107b0b6ce1c19b53ec3bf7c = L.marker(
+                [22.491976044768013, 71.59791480828689],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_4d78d777e865ccbabb6c5156403e8204 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1624mm, Len: 11407m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_6c97cef65107b0b6ce1c19b53ec3bf7c.setIcon(div_icon_4d78d777e865ccbabb6c5156403e8204);
+            
+    
+            var poly_line_c4b5b37d53835cc97a1c79547623be6c = L.polyline(
+                [[22.40153190408321, 71.45907124673411], [22.40147174926993, 71.45863647580201], [22.401088764276565, 71.45511843372144], [22.402185933682365, 71.44489493318653]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_df72cfccc1aa6eb1ce3e6aff1437c97d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9998adf32b4d54074accc9be57a4144e = $(`<div id="html_9998adf32b4d54074accc9be57a4144e" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-10<br>     <b>Start Node:</b> KHINTALA<br>     <b>Stop Node:</b> GUNDIYAVADA<br>     <b>MS 1218mm, Len: 1470m</b>     </div>`)[0];
+                popup_df72cfccc1aa6eb1ce3e6aff1437c97d.setContent(html_9998adf32b4d54074accc9be57a4144e);
+            
+        
+
+        poly_line_c4b5b37d53835cc97a1c79547623be6c.bindPopup(popup_df72cfccc1aa6eb1ce3e6aff1437c97d)
+        ;
+
+        
+    
+    
+            var marker_a69abbf7304cd6bb26fc2fd1d2acbfc4 = L.marker(
+                [22.401088764276565, 71.45511843372144],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_0aedf613ece74a8e5c64337d81904310 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1218mm, Len: 1470m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_a69abbf7304cd6bb26fc2fd1d2acbfc4.setIcon(div_icon_0aedf613ece74a8e5c64337d81904310);
+            
+    
+            var poly_line_1d674638ad13cf6264775f55ca9ad5b5 = L.polyline(
+                [[22.411722404178516, 71.44166221413334], [22.417908161930917, 71.44333578755646], [22.421997688269236, 71.44578295905352]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_0a9732dcf68bf98005c3ffd5534a2a11 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d708b2f7bdc0e7fe6d20f82c583b1026 = $(`<div id="html_d708b2f7bdc0e7fe6d20f82c583b1026" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-11<br>     <b>Start Node:</b> NIMBHANI DAM<br>     <b>Stop Node:</b> J-12<br>     <b>MS 1218mm, Len: 1225m</b>     </div>`)[0];
+                popup_0a9732dcf68bf98005c3ffd5534a2a11.setContent(html_d708b2f7bdc0e7fe6d20f82c583b1026);
+            
+        
+
+        poly_line_1d674638ad13cf6264775f55ca9ad5b5.bindPopup(popup_0a9732dcf68bf98005c3ffd5534a2a11)
+        ;
+
+        
+    
+    
+            var marker_851ebf91c68ee4c6b9baf0ef9226ef4c = L.marker(
+                [22.417908161930917, 71.44333578755646],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_f8deb48cd2dc6b29eca2280d0f7a0a67 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1218mm, Len: 1225m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_851ebf91c68ee4c6b9baf0ef9226ef4c.setIcon(div_icon_f8deb48cd2dc6b29eca2280d0f7a0a67);
+            
+    
+            var poly_line_c725326aa784ec48ade4d3d28fa9aea9 = L.polyline(
+                [[22.401679303691985, 71.47029754462729], [22.401703674896723, 71.46995571051583], [22.401818618947928, 71.4685223239014]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_aed6be2e5f4ab027c13463c9d9f3f2fa = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_cc53bcaf1cf7db06c798e75c71c8f85a = $(`<div id="html_cc53bcaf1cf7db06c798e75c71c8f85a" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-12<br>     <b>Start Node:</b> J-29<br>     <b>Stop Node:</b> DHAJALA<br>     <b>MS 1218mm, Len: 184m</b>     </div>`)[0];
+                popup_aed6be2e5f4ab027c13463c9d9f3f2fa.setContent(html_cc53bcaf1cf7db06c798e75c71c8f85a);
+            
+        
+
+        poly_line_c725326aa784ec48ade4d3d28fa9aea9.bindPopup(popup_aed6be2e5f4ab027c13463c9d9f3f2fa)
+        ;
+
+        
+    
+    
+            var marker_31b399b65f299256ea7ff7aaaf92cbe7 = L.marker(
+                [22.401703674896723, 71.46995571051583],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_b9b7862a1b502c42a309382cba3b8338 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1218mm, Len: 184m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_31b399b65f299256ea7ff7aaaf92cbe7.setIcon(div_icon_b9b7862a1b502c42a309382cba3b8338);
+            
+    
+            var poly_line_b8883ea39fe129d74e0062330072a327 = L.polyline(
+                [[22.401818618947928, 71.4685223239014], [22.40220067129257, 71.46475431007505], [22.40153190408321, 71.45907124673411]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_57eeed6b9cb922f9fdb3acabdcacc2e8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_39a6b5a31c6f627bd4c6a952d320aef2 = $(`<div id="html_39a6b5a31c6f627bd4c6a952d320aef2" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-13<br>     <b>Start Node:</b> BODI POND<br>     <b>Stop Node:</b> J-16<br>     <b>MS 1218mm, Len: 981m</b>     </div>`)[0];
+                popup_57eeed6b9cb922f9fdb3acabdcacc2e8.setContent(html_39a6b5a31c6f627bd4c6a952d320aef2);
+            
+        
+
+        poly_line_b8883ea39fe129d74e0062330072a327.bindPopup(popup_57eeed6b9cb922f9fdb3acabdcacc2e8)
+        ;
+
+        
+    
+    
+            var marker_abafcb10952fcd10effc89b0f30beafa = L.marker(
+                [22.40220067129257, 71.46475431007505],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_a8b70a1d88eeb3fde1f8be2132adc6a5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1218mm, Len: 981m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_abafcb10952fcd10effc89b0f30beafa.setIcon(div_icon_a8b70a1d88eeb3fde1f8be2132adc6a5);
+            
+    
+            var poly_line_36a17c70752a1a6bc23c2dc63ab46fe3 = L.polyline(
+                [[22.402170626754838, 71.4448954038578], [22.40263201071307, 71.44449099790877], [22.40358703530544, 71.4437619390615], [22.411722404178516, 71.44166221413334]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_2d581a1532e4e18f24fbc77942b29ec8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ab9261f252196268629dedf9d04e2fa2 = $(`<div id="html_ab9261f252196268629dedf9d04e2fa2" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-14<br>     <b>Start Node:</b> PS-2A<br>     <b>Stop Node:</b> DHAJALA CD,KARADI,NAVAGAM<br>     <b>MS 1218mm, Len: 1122m</b>     </div>`)[0];
+                popup_2d581a1532e4e18f24fbc77942b29ec8.setContent(html_ab9261f252196268629dedf9d04e2fa2);
+            
+        
+
+        poly_line_36a17c70752a1a6bc23c2dc63ab46fe3.bindPopup(popup_2d581a1532e4e18f24fbc77942b29ec8)
+        ;
+
+        
+    
+    
+            var marker_344f8422b2d13cf6770554af1117ddfd = L.marker(
+                [22.40358703530544, 71.4437619390615],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_4717ef661a25bf466f6193fdd78e4f8a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1218mm, Len: 1122m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_344f8422b2d13cf6770554af1117ddfd.setIcon(div_icon_4717ef661a25bf466f6193fdd78e4f8a);
+            
+    
+            var poly_line_3022e2319bcbea205feded47fc431f84 = L.polyline(
+                [[22.432649509678022, 71.45076051758765], [22.44177595080131, 71.45088116648708]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_1ff585f42a18bb7f33e93309c53164da = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b1f40708dccda42e28657093e8e783da = $(`<div id="html_b1f40708dccda42e28657093e8e783da" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-15<br>     <b>Start Node:</b> J-77<br>     <b>Stop Node:</b> DHANDHALPUR<br>     <b>MS 1014mm, Len: 1011m</b>     </div>`)[0];
+                popup_1ff585f42a18bb7f33e93309c53164da.setContent(html_b1f40708dccda42e28657093e8e783da);
+            
+        
+
+        poly_line_3022e2319bcbea205feded47fc431f84.bindPopup(popup_1ff585f42a18bb7f33e93309c53164da)
+        ;
+
+        
+    
+    
+            var marker_da04217b9164df509199b8598bb0787f = L.marker(
+                [22.44177595080131, 71.45088116648708],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_34970d59036dbde40c37329fc768caa0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1014mm, Len: 1011m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_da04217b9164df509199b8598bb0787f.setIcon(div_icon_34970d59036dbde40c37329fc768caa0);
+            
+    
+            var poly_line_449d61808461b7010dc949051b4c2765 = L.polyline(
+                [[22.421997688269236, 71.44578295905352], [22.4288620292036, 71.44903404167724], [22.432360562691493, 71.45062110948808], [22.432649509678022, 71.45076051758765]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_bebfdd37559f20ff337f30a01b3fe97f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_7fde5322cbbf5b6a1ddc01dc2308683c = $(`<div id="html_7fde5322cbbf5b6a1ddc01dc2308683c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-16<br>     <b>Start Node:</b> J-142<br>     <b>Stop Node:</b> J-126<br>     <b>MS 1014mm, Len: 1287m</b>     </div>`)[0];
+                popup_bebfdd37559f20ff337f30a01b3fe97f.setContent(html_7fde5322cbbf5b6a1ddc01dc2308683c);
+            
+        
+
+        poly_line_449d61808461b7010dc949051b4c2765.bindPopup(popup_bebfdd37559f20ff337f30a01b3fe97f)
+        ;
+
+        
+    
+    
+            var marker_048290216cf028afa93c30f6c5dc7fbd = L.marker(
+                [22.432360562691493, 71.45062110948808],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_8b1decc8f5b047125f24e20f06eb002d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 1014mm, Len: 1287m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_048290216cf028afa93c30f6c5dc7fbd.setIcon(div_icon_8b1decc8f5b047125f24e20f06eb002d);
+            
+    
+            var poly_line_b38ec71090801f0a5b01460875aa77ab = L.polyline(
+                [[22.44177595080131, 71.45088116648708], [22.457535418303113, 71.44867010776436]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_0dc7b2cfc177837e6bad88fe34059648 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8ffc6590deba8a93231b2943ae0bbc50 = $(`<div id="html_8ffc6590deba8a93231b2943ae0bbc50" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-17<br>     <b>Start Node:</b> J-141<br>     <b>Stop Node:</b> NAVAGAM KHERADIYA POND<br>     <b>MS 914mm, Len: 1761m</b>     </div>`)[0];
+                popup_0dc7b2cfc177837e6bad88fe34059648.setContent(html_8ffc6590deba8a93231b2943ae0bbc50);
+            
+        
+
+        poly_line_b38ec71090801f0a5b01460875aa77ab.bindPopup(popup_0dc7b2cfc177837e6bad88fe34059648)
+        ;
+
+        
+    
+    
+            var marker_0e1aa8ee605ee12ceb8b609c36159493 = L.marker(
+                [22.457535418303113, 71.44867010776436],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_83acd102f7e11a20b24b34b3ce0ce1e0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 914mm, Len: 1761m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_0e1aa8ee605ee12ceb8b609c36159493.setIcon(div_icon_83acd102f7e11a20b24b34b3ce0ce1e0);
+            
+    
+            var poly_line_44839a497de23ae7b2d716b29cc9d2da = L.polyline(
+                [[22.538980662835904, 71.65395870554141], [22.538717907998223, 71.6532884995869], [22.538193416619993, 71.65192467340158], [22.528166580082775, 71.63581026922377], [22.52817687829669, 71.63564007161628]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_d6f5e4392cd93f3394b26bbd3a3f0736 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b25900d23f2ece7e2ccc94edae850a72 = $(`<div id="html_b25900d23f2ece7e2ccc94edae850a72" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-18<br>     <b>Start Node:</b> PS-1A<br>     <b>Stop Node:</b> BHON POND<br>     <b>MS 814mm, Len: 2241m</b>     </div>`)[0];
+                popup_d6f5e4392cd93f3394b26bbd3a3f0736.setContent(html_b25900d23f2ece7e2ccc94edae850a72);
+            
+        
+
+        poly_line_44839a497de23ae7b2d716b29cc9d2da.bindPopup(popup_d6f5e4392cd93f3394b26bbd3a3f0736)
+        ;
+
+        
+    
+    
+            var marker_633d8553210fcb9a81a4051822328958 = L.marker(
+                [22.538193416619993, 71.65192467340158],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_1de5cfd641361e9bdf2c0c75e43c3ccd = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 814mm, Len: 2241m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_633d8553210fcb9a81a4051822328958.setIcon(div_icon_1de5cfd641361e9bdf2c0c75e43c3ccd);
+            
+    
+            var poly_line_7392075d7defefffdbde95c5010b9b6f = L.polyline(
+                [[22.40217766769833, 71.44489900582045], [22.402181613832422, 71.44458108624956], [22.402238976651976, 71.44173484410328], [22.40224892760095, 71.4417537842039]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_d46cdab206f8f1a413a0ef0cb174d1d7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_65c6450c8afef6c9622f5527ddb9808c = $(`<div id="html_65c6450c8afef6c9622f5527ddb9808c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-19<br>     <b>Start Node:</b> PS-2B<br>     <b>Stop Node:</b> J-102<br>     <b>MS 814mm, Len: 329m</b>     </div>`)[0];
+                popup_d46cdab206f8f1a413a0ef0cb174d1d7.setContent(html_65c6450c8afef6c9622f5527ddb9808c);
+            
+        
+
+        poly_line_7392075d7defefffdbde95c5010b9b6f.bindPopup(popup_d46cdab206f8f1a413a0ef0cb174d1d7)
+        ;
+
+        
+    
+    
+            var marker_b31bce42dbdcee9e5530281b6a719a2b = L.marker(
+                [22.402238976651976, 71.44173484410328],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_5c14646c6e956c5eced56031257e3e2a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 814mm, Len: 329m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_b31bce42dbdcee9e5530281b6a719a2b.setIcon(div_icon_5c14646c6e956c5eced56031257e3e2a);
+            
+    
+            var poly_line_d34255d34b6334c0c79118d816534f12 = L.polyline(
+                [[22.40224892760095, 71.4417537842039], [22.39052615811508, 71.43478318437539], [22.387315007299133, 71.42970321878114], [22.383929168085537, 71.4267192853503], [22.381166643325095, 71.42450932343797], [22.380502442500653, 71.42357058063294], [22.3802245210707, 71.42313088246003]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_5b6c613adba2abab8da0d74c4002e10c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a4da7286c2b2ac43e1d576405138f142 = $(`<div id="html_a4da7286c2b2ac43e1d576405138f142" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-20<br>     <b>Start Node:</b> J-139<br>     <b>Stop Node:</b> DHINKWALI,GARAMBHADI<br>     <b>MS 814mm, Len: 3159m</b>     </div>`)[0];
+                popup_5b6c613adba2abab8da0d74c4002e10c.setContent(html_a4da7286c2b2ac43e1d576405138f142);
+            
+        
+
+        poly_line_d34255d34b6334c0c79118d816534f12.bindPopup(popup_5b6c613adba2abab8da0d74c4002e10c)
+        ;
+
+        
+    
+    
+            var marker_4f46a93314ddd657b1f519bbfc4535af = L.marker(
+                [22.383929168085537, 71.4267192853503],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_94f4bf0a736fa330ea13398bf372b141 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eMS 814mm, Len: 3159m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_4f46a93314ddd657b1f519bbfc4535af.setIcon(div_icon_94f4bf0a736fa330ea13398bf372b141);
+            
+    
+            var poly_line_60b8dd6614d5b2bea9ae96543c8f9f15 = L.polyline(
+                [[22.3802245210707, 71.42313088246003], [22.380061322729727, 71.4226660846118], [22.37799133902565, 71.41715089281388], [22.376056063439968, 71.40859008617164]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_2ee6bf78d0337d403ec83bb2f9d256b1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_dc7ad088b0480e15642096ed29e4d467 = $(`<div id="html_dc7ad088b0480e15642096ed29e4d467" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-21<br>     <b>Start Node:</b> J-10<br>     <b>Stop Node:</b> J-26<br>     <b>DI 700mm, Len: 1572m</b>     </div>`)[0];
+                popup_2ee6bf78d0337d403ec83bb2f9d256b1.setContent(html_dc7ad088b0480e15642096ed29e4d467);
+            
+        
+
+        poly_line_60b8dd6614d5b2bea9ae96543c8f9f15.bindPopup(popup_2ee6bf78d0337d403ec83bb2f9d256b1)
+        ;
+
+        
+    
+    
+            var marker_6311eea8d185b9ec46708e6c12024a9e = L.marker(
+                [22.37799133902565, 71.41715089281388],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_212f726d9fe493e7015717718ed12e8b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 700mm, Len: 1572m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_6311eea8d185b9ec46708e6c12024a9e.setIcon(div_icon_212f726d9fe493e7015717718ed12e8b);
+            
+    
+            var poly_line_df2a01f8300d2e60bf52bd7a608bebbd = L.polyline(
+                [[22.376056063439968, 71.40859008617164], [22.375755408687183, 71.40744274898836], [22.37459886571571, 71.40006642283113], [22.373994945586766, 71.39578735801571], [22.373481487503813, 71.39262403292774], [22.370646862387634, 71.38757098849531], [22.370427255113608, 71.38375002020496], [22.368782526513684, 71.37151091907809], [22.368143045118263, 71.36843563040743], [22.36795850964041, 71.36705930002725], [22.367851651126262, 71.36658336281607]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_b4d4af2685e0d57d6e836bbcda30755c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_af5299abd14fd69ea0026a8054d98b5d = $(`<div id="html_af5299abd14fd69ea0026a8054d98b5d" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-22<br>     <b>Start Node:</b> J-12<br>     <b>Stop Node:</b> KASWALI<br>     <b>DI 700mm, Len: 4465m</b>     </div>`)[0];
+                popup_b4d4af2685e0d57d6e836bbcda30755c.setContent(html_af5299abd14fd69ea0026a8054d98b5d);
+            
+        
+
+        poly_line_df2a01f8300d2e60bf52bd7a608bebbd.bindPopup(popup_b4d4af2685e0d57d6e836bbcda30755c)
+        ;
+
+        
+    
+    
+            var marker_7d367aca96116e65bca8fe4e235a8e22 = L.marker(
+                [22.370646862387634, 71.38757098849531],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_7feb6d17c1ee8270312c684a597f6953 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 700mm, Len: 4465m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7d367aca96116e65bca8fe4e235a8e22.setIcon(div_icon_7feb6d17c1ee8270312c684a597f6953);
+            
+    
+            var poly_line_f032d09e1883964cf06aab7757b61793 = L.polyline(
+                [[22.367851651126262, 71.36658336281607], [22.36773710445624, 71.36595442899124], [22.367683559239207, 71.3647291569588], [22.36723426029513, 71.35993465806654], [22.3660934484677, 71.35655628244733], [22.365443734879545, 71.35536956030275]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_a0bcd85a16d855a40fe309f37f679acd = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8b41a8d2e5b3cd9d5ecf456fc86f8b1c = $(`<div id="html_8b41a8d2e5b3cd9d5ecf456fc86f8b1c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-23<br>     <b>Start Node:</b> J-16<br>     <b>Stop Node:</b> KOTDA POND VID,KOTDA TALI<br>     <b>DI 700mm, Len: 1201m</b>     </div>`)[0];
+                popup_a0bcd85a16d855a40fe309f37f679acd.setContent(html_8b41a8d2e5b3cd9d5ecf456fc86f8b1c);
+            
+        
+
+        poly_line_f032d09e1883964cf06aab7757b61793.bindPopup(popup_a0bcd85a16d855a40fe309f37f679acd)
+        ;
+
+        
+    
+    
+            var marker_4d156b9ad03700c778350343a296c6bb = L.marker(
+                [22.36723426029513, 71.35993465806654],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_fa7693db3fc0bf13b97c8d0f8516c39e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 700mm, Len: 1201m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_4d156b9ad03700c778350343a296c6bb.setIcon(div_icon_fa7693db3fc0bf13b97c8d0f8516c39e);
+            
+    
+            var poly_line_80dfb327723cd2de5fae55bb46810844 = L.polyline(
+                [[22.365443734879545, 71.35536956030275], [22.36510495652589, 71.35447828603299], [22.363584105824636, 71.35039754336354]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_e383c650a207241d37d1efc2057fa538 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e558f71663751e7ffeaa89c80458d2b8 = $(`<div id="html_e558f71663751e7ffeaa89c80458d2b8" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-24<br>     <b>Start Node:</b> DHAJALA CD,KARADI,NAVAGAM<br>     <b>Stop Node:</b> BODI POND<br>     <b>DI 700mm, Len: 552m</b>     </div>`)[0];
+                popup_e383c650a207241d37d1efc2057fa538.setContent(html_e558f71663751e7ffeaa89c80458d2b8);
+            
+        
+
+        poly_line_80dfb327723cd2de5fae55bb46810844.bindPopup(popup_e383c650a207241d37d1efc2057fa538)
+        ;
+
+        
+    
+    
+            var marker_c5fb2a75af8d4f5483e44ea0ea8b7410 = L.marker(
+                [22.36510495652589, 71.35447828603299],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_6141364450f285020109a9189f62ce5a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 700mm, Len: 552m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_c5fb2a75af8d4f5483e44ea0ea8b7410.setIcon(div_icon_6141364450f285020109a9189f62ce5a);
+            
+    
+            var poly_line_6c7acbf0613107889f615bad4c831c22 = L.polyline(
+                [[22.52817687829669, 71.63564007161628], [22.528906272805028, 71.62271560531767], [22.53007110481525, 71.60562577186703], [22.533227144699108, 71.59399996280786], [22.53967590576317, 71.59114166096887]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_341a4f6d5899f94b0ecfee8b3bda6f2f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_64bcbbacd5afff9999a2a29664791e5d = $(`<div id="html_64bcbbacd5afff9999a2a29664791e5d" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-25<br>     <b>Start Node:</b> J-120<br>     <b>Stop Node:</b> J-31<br>     <b>DI 700mm, Len: 5116m</b>     </div>`)[0];
+                popup_341a4f6d5899f94b0ecfee8b3bda6f2f.setContent(html_64bcbbacd5afff9999a2a29664791e5d);
+            
+        
+
+        poly_line_6c7acbf0613107889f615bad4c831c22.bindPopup(popup_341a4f6d5899f94b0ecfee8b3bda6f2f)
+        ;
+
+        
+    
+    
+            var marker_f0c9ff72a5effb0e9b316019dfe0abc7 = L.marker(
+                [22.53007110481525, 71.60562577186703],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_528ab6c027919a445c3bb7741f824227 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 700mm, Len: 5116m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_f0c9ff72a5effb0e9b316019dfe0abc7.setIcon(div_icon_528ab6c027919a445c3bb7741f824227);
+            
+    
+            var poly_line_5f9f29ec5127ab1a461702714d5a85a3 = L.polyline(
+                [[22.363584105824636, 71.35039754336354], [22.36341688560697, 71.34989739747382], [22.363311547791124, 71.34968025746328], [22.362468377844284, 71.34692332621843], [22.3621630059266, 71.34454835318263], [22.361531156539677, 71.34413464713542]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_87263fff1ebc73598570cadc0aa48ec7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_47364d17e63c8abc598c4b9903712c5c = $(`<div id="html_47364d17e63c8abc598c4b9903712c5c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-26<br>     <b>Start Node:</b> J-18<br>     <b>Stop Node:</b> NOLI,LAKHAVAD POND<br>     <b>DI 700mm, Len: 708m</b>     </div>`)[0];
+                popup_87263fff1ebc73598570cadc0aa48ec7.setContent(html_47364d17e63c8abc598c4b9903712c5c);
+            
+        
+
+        poly_line_5f9f29ec5127ab1a461702714d5a85a3.bindPopup(popup_87263fff1ebc73598570cadc0aa48ec7)
+        ;
+
+        
+    
+    
+            var marker_7316f9640a91f9fe7b37c3683ff95d83 = L.marker(
+                [22.362468377844284, 71.34692332621843],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_6d88eb61b847dc70aa1ffa2e7c4ddefd = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 700mm, Len: 708m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7316f9640a91f9fe7b37c3683ff95d83.setIcon(div_icon_6d88eb61b847dc70aa1ffa2e7c4ddefd);
+            
+    
+            var poly_line_a1e547be9f89d680318e113293573375 = L.polyline(
+                [[22.363584105824636, 71.35039754336354], [22.36068576269106, 71.35205681308068], [22.35462527210687, 71.35527324869399], [22.35145039138842, 71.35755803878621], [22.350541804357118, 71.35839935747879], [22.347908649220994, 71.36012541098675], [22.34760205546029, 71.36023075537034]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_36349ee4f8e0cea8b756e1a1629bc47a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9276c60ef4952ad12c71c3405486e1fd = $(`<div id="html_9276c60ef4952ad12c71c3405486e1fd" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-27<br>     <b>Start Node:</b> J-18<br>     <b>Stop Node:</b> SHRIVAN POND<br>     <b>DI 600mm, Len: 2046m</b>     </div>`)[0];
+                popup_36349ee4f8e0cea8b756e1a1629bc47a.setContent(html_9276c60ef4952ad12c71c3405486e1fd);
+            
+        
+
+        poly_line_a1e547be9f89d680318e113293573375.bindPopup(popup_36349ee4f8e0cea8b756e1a1629bc47a)
+        ;
+
+        
+    
+    
+            var marker_6a3542ceccad4f833c367b240d59006a = L.marker(
+                [22.35145039138842, 71.35755803878621],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_445029b95c8d182d825ebb7a7cf2e5cd = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 600mm, Len: 2046m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_6a3542ceccad4f833c367b240d59006a.setIcon(div_icon_445029b95c8d182d825ebb7a7cf2e5cd);
+            
+    
+            var poly_line_4e4739d22320a0a2a79e2adf757cfee5 = L.polyline(
+                [[22.34760205546029, 71.36023075537034], [22.345041484882266, 71.36107837058447], [22.344926857075098, 71.36109623547718]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_1293d4f3a42164d74bfef3a16e61166f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d3f9eb184528916e8f8ad419ab4bb05e = $(`<div id="html_d3f9eb184528916e8f8ad419ab4bb05e" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-28<br>     <b>Start Node:</b> NAVAGAM KHERADIYA POND<br>     <b>Stop Node:</b> VANDHALU POND<br>     <b>DI 600mm, Len: 310m</b>     </div>`)[0];
+                popup_1293d4f3a42164d74bfef3a16e61166f.setContent(html_d3f9eb184528916e8f8ad419ab4bb05e);
+            
+        
+
+        poly_line_4e4739d22320a0a2a79e2adf757cfee5.bindPopup(popup_1293d4f3a42164d74bfef3a16e61166f)
+        ;
+
+        
+    
+    
+            var marker_a9c659c9858389e59933478a2514cb4d = L.marker(
+                [22.345041484882266, 71.36107837058447],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_0f5a779f56954be7df0bf322da0be74a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 600mm, Len: 310m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_a9c659c9858389e59933478a2514cb4d.setIcon(div_icon_0f5a779f56954be7df0bf322da0be74a);
+            
+    
+            var poly_line_874edeb911684c615d768d60458cd0be = L.polyline(
+                [[22.55001209972339, 71.58537432458449], [22.55618181666864, 71.5755065629348], [22.558524091479303, 71.5729720956435], [22.571346914435825, 71.55696976166031], [22.571540790029292, 71.55684283442008]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_889225e9d02952793c5e4bc42262dea5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5ce3cd555a03f2d116a4b007db1ba5b4 = $(`<div id="html_5ce3cd555a03f2d116a4b007db1ba5b4" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-29<br>     <b>Start Node:</b> J-33<br>     <b>Stop Node:</b> J-35<br>     <b>DI 600mm, Len: 3792m</b>     </div>`)[0];
+                popup_889225e9d02952793c5e4bc42262dea5.setContent(html_5ce3cd555a03f2d116a4b007db1ba5b4);
+            
+        
+
+        poly_line_874edeb911684c615d768d60458cd0be.bindPopup(popup_889225e9d02952793c5e4bc42262dea5)
+        ;
+
+        
+    
+    
+            var marker_7b13b6ded7110f2477c4db89c2376ebf = L.marker(
+                [22.558524091479303, 71.5729720956435],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_c97cfc4298eaf77a5cc033dd901b6d4d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 600mm, Len: 3792m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7b13b6ded7110f2477c4db89c2376ebf.setIcon(div_icon_c97cfc4298eaf77a5cc033dd901b6d4d);
+            
+    
+            var poly_line_c25d4c6b8bda05eb1b66d6b39a8c53ea = L.polyline(
+                [[22.53967590576317, 71.59114166096887], [22.543212817541434, 71.5895478037181], [22.548834854243253, 71.58726326006038], [22.55001209972339, 71.58537432458449]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_07912a5ddbe17d409b21f9e592878726 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e7ab29db6b56a8b85570c9202b4d6913 = $(`<div id="html_e7ab29db6b56a8b85570c9202b4d6913" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-30<br>     <b>Start Node:</b> J-106<br>     <b>Stop Node:</b> TUVA<br>     <b>DI 600mm, Len: 1325m</b>     </div>`)[0];
+                popup_07912a5ddbe17d409b21f9e592878726.setContent(html_e7ab29db6b56a8b85570c9202b4d6913);
+            
+        
+
+        poly_line_c25d4c6b8bda05eb1b66d6b39a8c53ea.bindPopup(popup_07912a5ddbe17d409b21f9e592878726)
+        ;
+
+        
+    
+    
+            var marker_d31c643ac031054b8667ed466ff08dc3 = L.marker(
+                [22.548834854243253, 71.58726326006038],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_570cca28bf7f480906f475784a20f28b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 600mm, Len: 1325m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_d31c643ac031054b8667ed466ff08dc3.setIcon(div_icon_570cca28bf7f480906f475784a20f28b);
+            
+    
+            var poly_line_53e6674c7444e1ec53a899603f2631a9 = L.polyline(
+                [[22.571540790029292, 71.55684283442008], [22.577925297091323, 71.55349748459169]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_c5ac4897fcc03c0d18db194ea2dd8726 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_bd0f877b020b0738341879c36046d80c = $(`<div id="html_bd0f877b020b0738341879c36046d80c" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-31<br>     <b>Start Node:</b> J-35<br>     <b>Stop Node:</b> J-144<br>     <b>DI 600mm, Len: 787m</b>     </div>`)[0];
+                popup_c5ac4897fcc03c0d18db194ea2dd8726.setContent(html_bd0f877b020b0738341879c36046d80c);
+            
+        
+
+        poly_line_53e6674c7444e1ec53a899603f2631a9.bindPopup(popup_c5ac4897fcc03c0d18db194ea2dd8726)
+        ;
+
+        
+    
+    
+            var marker_2c2d63bcd587f3bcfae17314ce84a1b2 = L.marker(
+                [22.577925297091323, 71.55349748459169],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_222500e0baab7701dd541badde474aad = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 600mm, Len: 787m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_2c2d63bcd587f3bcfae17314ce84a1b2.setIcon(div_icon_222500e0baab7701dd541badde474aad);
+            
+    
+            var poly_line_7831a88ffd22edc2c020d83d2c74ac6a = L.polyline(
+                [[22.583595102717993, 71.55052051356698], [22.584000996969962, 71.55027855498994], [22.584789224283654, 71.54995307263047], [22.586611923023757, 71.5489166690345]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_b6eb9a70e59847965e34ef2738d2d65d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_648cff81c568cdda84d3d5b91b1b74c8 = $(`<div id="html_648cff81c568cdda84d3d5b91b1b74c8" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-32<br>     <b>Start Node:</b> J-37<br>     <b>Stop Node:</b> J-145<br>     <b>DI 500mm, Len: 373m</b>     </div>`)[0];
+                popup_b6eb9a70e59847965e34ef2738d2d65d.setContent(html_648cff81c568cdda84d3d5b91b1b74c8);
+            
+        
+
+        poly_line_7831a88ffd22edc2c020d83d2c74ac6a.bindPopup(popup_b6eb9a70e59847965e34ef2738d2d65d)
+        ;
+
+        
+    
+    
+            var marker_2e560b418f59a86e66ebf524fdfc327d = L.marker(
+                [22.584789224283654, 71.54995307263047],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_ce8547c8862b190de0a465543eca5c77 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 500mm, Len: 373m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_2e560b418f59a86e66ebf524fdfc327d.setIcon(div_icon_ce8547c8862b190de0a465543eca5c77);
+            
+    
+            var poly_line_604cf9ce7661d5a4cd559cdaffd47ca1 = L.polyline(
+                [[22.571540790029292, 71.55684283442008], [22.565965648175318, 71.55334656363927], [22.56555245154788, 71.55279493852026]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_c5e362993e0307ed37caf3dd248043b5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9228da0ea3866ea2e1228748f240e830 = $(`<div id="html_9228da0ea3866ea2e1228748f240e830" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-33<br>     <b>Start Node:</b> J-35<br>     <b>Stop Node:</b> J-105<br>     <b>DI 500mm, Len: 788m</b>     </div>`)[0];
+                popup_c5e362993e0307ed37caf3dd248043b5.setContent(html_9228da0ea3866ea2e1228748f240e830);
+            
+        
+
+        poly_line_604cf9ce7661d5a4cd559cdaffd47ca1.bindPopup(popup_c5e362993e0307ed37caf3dd248043b5)
+        ;
+
+        
+    
+    
+            var marker_7d4bbe1f640713ce484d46f8f9964221 = L.marker(
+                [22.565965648175318, 71.55334656363927],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_19e43eb6736153b3e775b1c56695bef0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 500mm, Len: 788m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7d4bbe1f640713ce484d46f8f9964221.setIcon(div_icon_19e43eb6736153b3e775b1c56695bef0);
+            
+    
+            var poly_line_a49bb452c40e3e8d30e7bb9741f8c004 = L.polyline(
+                [[22.577925297091323, 71.55349748459169], [22.583595102717993, 71.55052051356698]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_278e28975c65e43794437ba7d00b4e12 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_49152723659865913b6f9d5fd5d62fbb = $(`<div id="html_49152723659865913b6f9d5fd5d62fbb" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-34<br>     <b>Start Node:</b> J-145<br>     <b>Stop Node:</b> J-128<br>     <b>DI 500mm, Len: 699m</b>     </div>`)[0];
+                popup_278e28975c65e43794437ba7d00b4e12.setContent(html_49152723659865913b6f9d5fd5d62fbb);
+            
+        
+
+        poly_line_a49bb452c40e3e8d30e7bb9741f8c004.bindPopup(popup_278e28975c65e43794437ba7d00b4e12)
+        ;
+
+        
+    
+    
+            var marker_533aff7799e570457ee48a1a5dd19b83 = L.marker(
+                [22.583595102717993, 71.55052051356698],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_16e7f9cd96a4393a38576a5313ff5790 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 500mm, Len: 699m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_533aff7799e570457ee48a1a5dd19b83.setIcon(div_icon_16e7f9cd96a4393a38576a5313ff5790);
+            
+    
+            var poly_line_61fc86f8e680d5812f99a701e591172a = L.polyline(
+                [[22.355582385408322, 71.33837950334106], [22.352937355879785, 71.33434676859285], [22.352030999583416, 71.3333536743014], [22.349746383880216, 71.32828736871443]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_7595115b43ab227060b5623f3c9a424c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ed5e3e3ea2139b02278de0fca55af4a4 = $(`<div id="html_ed5e3e3ea2139b02278de0fca55af4a4" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-35<br>     <b>Start Node:</b> J-4<br>     <b>Stop Node:</b> RAMPARA<br>     <b>DI 450mm, Len: 1232m</b>     </div>`)[0];
+                popup_7595115b43ab227060b5623f3c9a424c.setContent(html_ed5e3e3ea2139b02278de0fca55af4a4);
+            
+        
+
+        poly_line_61fc86f8e680d5812f99a701e591172a.bindPopup(popup_7595115b43ab227060b5623f3c9a424c)
+        ;
+
+        
+    
+    
+            var marker_bd3ea0d8fa68005afc5537eaecc67406 = L.marker(
+                [22.352030999583416, 71.3333536743014],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_1e2b38526aa8cf4e55d085a2c60e3735 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 450mm, Len: 1232m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_bd3ea0d8fa68005afc5537eaecc67406.setIcon(div_icon_1e2b38526aa8cf4e55d085a2c60e3735);
+            
+    
+            var poly_line_7331b7e9b212cf72a2cb555a3e28e815 = L.polyline(
+                [[22.586611923023757, 71.5489166690345], [22.589792330106118, 71.54712002974205], [22.5900740575945, 71.5469517469759]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_36ca292a327caa4635a02bb6180105f9 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_6995073600993c6389a9086e1547f0a6 = $(`<div id="html_6995073600993c6389a9086e1547f0a6" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-36<br>     <b>Start Node:</b> J-105<br>     <b>Stop Node:</b> CHANPAR<br>     <b>DI 450mm, Len: 434m</b>     </div>`)[0];
+                popup_36ca292a327caa4635a02bb6180105f9.setContent(html_6995073600993c6389a9086e1547f0a6);
+            
+        
+
+        poly_line_7331b7e9b212cf72a2cb555a3e28e815.bindPopup(popup_36ca292a327caa4635a02bb6180105f9)
+        ;
+
+        
+    
+    
+            var marker_61809578207c34c0d58efe3dcb22e003 = L.marker(
+                [22.589792330106118, 71.54712002974205],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_64c072952bec3a1bdeabf259198ea97b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 450mm, Len: 434m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_61809578207c34c0d58efe3dcb22e003.setIcon(div_icon_64c072952bec3a1bdeabf259198ea97b);
+            
+    
+            var poly_line_dc5cf4b8f9634075122c73e6b50deaa0 = L.polyline(
+                [[22.361531156539677, 71.34413464713542], [22.359467320924146, 71.34237329301395], [22.357142853359367, 71.33987409671091], [22.35595592346089, 71.33877408559124], [22.355582385408322, 71.33837950334106]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_244caf331ec01c3a2259d2b4e432ca15 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_69c7afbe9560dd6f29a8af2417358998 = $(`<div id="html_69c7afbe9560dd6f29a8af2417358998" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-37<br>     <b>Start Node:</b> J-126<br>     <b>Stop Node:</b> MUNJPUR<br>     <b>DI 450mm, Len: 888m</b>     </div>`)[0];
+                popup_244caf331ec01c3a2259d2b4e432ca15.setContent(html_69c7afbe9560dd6f29a8af2417358998);
+            
+        
+
+        poly_line_dc5cf4b8f9634075122c73e6b50deaa0.bindPopup(popup_244caf331ec01c3a2259d2b4e432ca15)
+        ;
+
+        
+    
+    
+            var marker_2527f5aedd55c33669159d7c1a357fe3 = L.marker(
+                [22.357142853359367, 71.33987409671091],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_131aa841345e65d117969986d78c7e37 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 450mm, Len: 888m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_2527f5aedd55c33669159d7c1a357fe3.setIcon(div_icon_131aa841345e65d117969986d78c7e37);
+            
+    
+            var poly_line_14a41313d8c5c85890744eeeb33b9f3c = L.polyline(
+                [[22.583595102717993, 71.55052051356698], [22.582621452005824, 71.54848211604461], [22.578582938501707, 71.54237029019566]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_a0662c2900d00f6c7bd3f46feb1bd3c3 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_100ad6951c072da4e90ff366ea382ce7 = $(`<div id="html_100ad6951c072da4e90ff366ea382ce7" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-38<br>     <b>Start Node:</b> J-37<br>     <b>Stop Node:</b> LIMLI<br>     <b>DI 450mm, Len: 1008m</b>     </div>`)[0];
+                popup_a0662c2900d00f6c7bd3f46feb1bd3c3.setContent(html_100ad6951c072da4e90ff366ea382ce7);
+            
+        
+
+        poly_line_14a41313d8c5c85890744eeeb33b9f3c.bindPopup(popup_a0662c2900d00f6c7bd3f46feb1bd3c3)
+        ;
+
+        
+    
+    
+            var marker_385540a430eec891494f3c034cd1cf32 = L.marker(
+                [22.582621452005824, 71.54848211604461],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_74f2b3ce9714d292198e2bb243a19f4d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eDI 450mm, Len: 1008m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_385540a430eec891494f3c034cd1cf32.setIcon(div_icon_74f2b3ce9714d292198e2bb243a19f4d);
+            
+    
+            var poly_line_a658de7973df9bc99991a1f13ceed575 = L.polyline(
+                [[22.355582385408322, 71.33837950334106], [22.358719244448125, 71.33453918954848], [22.359756385601113, 71.33335184567147], [22.360846792002974, 71.33220988257091], [22.367451908119662, 71.3302518585351], [22.36891332434613, 71.3299894264754]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_a2bd8ea5b2413f83933f1f3820a89638 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b146e3601d5213c13c72af0c193485e5 = $(`<div id="html_b146e3601d5213c13c72af0c193485e5" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-39<br>     <b>Start Node:</b> J-4<br>     <b>Stop Node:</b> MALOD<br>     <b>HDPE 450mm, Len: 1786m</b>     </div>`)[0];
+                popup_a2bd8ea5b2413f83933f1f3820a89638.setContent(html_b146e3601d5213c13c72af0c193485e5);
+            
+        
+
+        poly_line_a658de7973df9bc99991a1f13ceed575.bindPopup(popup_a2bd8ea5b2413f83933f1f3820a89638)
+        ;
+
+        
+    
+    
+            var marker_cf937b5db3db5b29a7f04a2632a7171a = L.marker(
+                [22.360846792002974, 71.33220988257091],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_c94fd99f8fb75f8b55de389bc0aa3b96 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 450mm, Len: 1786m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_cf937b5db3db5b29a7f04a2632a7171a.setIcon(div_icon_c94fd99f8fb75f8b55de389bc0aa3b96);
+            
+    
+            var poly_line_0b0052cc1d7f23901d9b8f6086b8e380 = L.polyline(
+                [[22.344926857075098, 71.36109623547718], [22.344446474270402, 71.36149093784604], [22.34226030971649, 71.36295440857187], [22.341208695597253, 71.36392111076418], [22.3403824447579, 71.364639792672], [22.33906535067166, 71.36517686853375], [22.3389134101676, 71.36537312098835]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_15f947e8adc4ef6017c573e513abbcf6 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f492ecda1f828f9cffeb9a101cdfceb9 = $(`<div id="html_f492ecda1f828f9cffeb9a101cdfceb9" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-40<br>     <b>Start Node:</b> J-20<br>     <b>Stop Node:</b> J-48<br>     <b>HDPE 450mm, Len: 806m</b>     </div>`)[0];
+                popup_15f947e8adc4ef6017c573e513abbcf6.setContent(html_f492ecda1f828f9cffeb9a101cdfceb9);
+            
+        
+
+        poly_line_0b0052cc1d7f23901d9b8f6086b8e380.bindPopup(popup_15f947e8adc4ef6017c573e513abbcf6)
+        ;
+
+        
+    
+    
+            var marker_7acdc101e83c3acf5ee8dfab387ea86e = L.marker(
+                [22.341208695597253, 71.36392111076418],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_67a8714254ff200272df2bae4a9493ac = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 450mm, Len: 806m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7acdc101e83c3acf5ee8dfab387ea86e.setIcon(div_icon_67a8714254ff200272df2bae4a9493ac);
+            
+    
+            var poly_line_a560d6576ccced3789dd84880baf00f2 = L.polyline(
+                [[22.5900740575945, 71.5469517469759], [22.591456922700797, 71.5462536357758], [22.595139667601874, 71.54277995989695], [22.597868838882732, 71.54104730332706]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_4177a6bbe3a851294f3116e21e7005f4 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5f5c308c692eda6e28629c04d49176bc = $(`<div id="html_5f5c308c692eda6e28629c04d49176bc" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-41<br>     <b>Start Node:</b> J-121<br>     <b>Stop Node:</b> KORDA<br>     <b>HDPE 450mm, Len: 1063m</b>     </div>`)[0];
+                popup_4177a6bbe3a851294f3116e21e7005f4.setContent(html_5f5c308c692eda6e28629c04d49176bc);
+            
+        
+
+        poly_line_a560d6576ccced3789dd84880baf00f2.bindPopup(popup_4177a6bbe3a851294f3116e21e7005f4)
+        ;
+
+        
+    
+    
+            var marker_dec325b38271e9fc7b704cc58d6c629d = L.marker(
+                [22.595139667601874, 71.54277995989695],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_b79a7c9b7170f5934f494fa7bc3338c5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 450mm, Len: 1063m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_dec325b38271e9fc7b704cc58d6c629d.setIcon(div_icon_b79a7c9b7170f5934f494fa7bc3338c5);
+            
+    
+            var poly_line_b1e061319020f1a0fedab0a144d0ac01 = L.polyline(
+                [[22.56555245154788, 71.55279493852026], [22.561296067718516, 71.54733115097059], [22.559210282993085, 71.5433185496035], [22.55369779097628, 71.53601555630877], [22.552726343574093, 71.53497520203224]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_76f64a64d9a14d941d5dd640af9ef123 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_478f87f21a21778183a35c8f732378e4 = $(`<div id="html_478f87f21a21778183a35c8f732378e4" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-42<br>     <b>Start Node:</b> J-144<br>     <b>Stop Node:</b> GADH SHIRVANIYA POND<br>     <b>HDPE 450mm, Len: 2327m</b>     </div>`)[0];
+                popup_76f64a64d9a14d941d5dd640af9ef123.setContent(html_478f87f21a21778183a35c8f732378e4);
+            
+        
+
+        poly_line_b1e061319020f1a0fedab0a144d0ac01.bindPopup(popup_76f64a64d9a14d941d5dd640af9ef123)
+        ;
+
+        
+    
+    
+            var marker_6a31f47138dd5d37c78a4e24c167008b = L.marker(
+                [22.559210282993085, 71.5433185496035],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_e394ba818218389abfb7f1947617550d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 450mm, Len: 2327m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_6a31f47138dd5d37c78a4e24c167008b.setIcon(div_icon_e394ba818218389abfb7f1947617550d);
+            
+    
+            var poly_line_fe0dfb8baec0d1ca5b4085127ee0ae55 = L.polyline(
+                [[22.36891332434613, 71.3299894264754], [22.368820685556386, 71.32939674197571]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_4535b147bf7e9fa56d2ecfb0cdf32e91 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4f56218d94a1cf50b044d6e41eb26632 = $(`<div id="html_4f56218d94a1cf50b044d6e41eb26632" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-43<br>     <b>Start Node:</b> J-6<br>     <b>Stop Node:</b> GADHADIYA POND,MOMAI POND<br>     <b>HDPE 400mm, Len: 62m</b>     </div>`)[0];
+                popup_4535b147bf7e9fa56d2ecfb0cdf32e91.setContent(html_4f56218d94a1cf50b044d6e41eb26632);
+            
+        
+
+        poly_line_fe0dfb8baec0d1ca5b4085127ee0ae55.bindPopup(popup_4535b147bf7e9fa56d2ecfb0cdf32e91)
+        ;
+
+        
+    
+    
+            var marker_9b629cf1f4586cde53a0da6b8122e74a = L.marker(
+                [22.368820685556386, 71.32939674197571],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_74bc92c6335992bf65c1f68a98fbedd4 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 400mm, Len: 62m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_9b629cf1f4586cde53a0da6b8122e74a.setIcon(div_icon_74bc92c6335992bf65c1f68a98fbedd4);
+            
+    
+            var poly_line_6277d6fd8e78404067c22e3c69cff422 = L.polyline(
+                [[22.401679303691985, 71.47029754462729], [22.394944029869947, 71.46591298798518], [22.3920471256301, 71.46494848527858], [22.388626280302276, 71.46353001220756], [22.385496759662324, 71.46022418877891], [22.378551415441112, 71.45598032357493], [22.377653074477116, 71.45566194379401]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_4d7bc5e6450983d7cb95dceac4ff9c32 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_76d6e477851e6112ea9bb435d2897a75 = $(`<div id="html_76d6e477851e6112ea9bb435d2897a75" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-44<br>     <b>Start Node:</b> J-29<br>     <b>Stop Node:</b> SUDAMADA<br>     <b>HDPE 400mm, Len: 3090m</b>     </div>`)[0];
+                popup_4d7bc5e6450983d7cb95dceac4ff9c32.setContent(html_76d6e477851e6112ea9bb435d2897a75);
+            
+        
+
+        poly_line_6277d6fd8e78404067c22e3c69cff422.bindPopup(popup_4d7bc5e6450983d7cb95dceac4ff9c32)
+        ;
+
+        
+    
+    
+            var marker_455f034f8686ddfe2b678bacc5d49f54 = L.marker(
+                [22.388626280302276, 71.46353001220756],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_49686c8628e4a3a0697800e02617435f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 400mm, Len: 3090m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_455f034f8686ddfe2b678bacc5d49f54.setIcon(div_icon_49686c8628e4a3a0697800e02617435f);
+            
+    
+            var poly_line_69a46a570ac8fa13996d62c6b62f81d5 = L.polyline(
+                [[22.3389134101676, 71.36537312098835], [22.33868535182176, 71.36555522064081], [22.33812173740506, 71.36621414306215], [22.335955018549345, 71.36749129899879], [22.334455797678878, 71.3682531101428]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_d7416b342e4ddae5975ecf88dfc80e2f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b535658eb1535f86b137077b326a56ca = $(`<div id="html_b535658eb1535f86b137077b326a56ca" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-45<br>     <b>Start Node:</b> J-102<br>     <b>Stop Node:</b> J-55<br>     <b>HDPE 400mm, Len: 581m</b>     </div>`)[0];
+                popup_d7416b342e4ddae5975ecf88dfc80e2f.setContent(html_b535658eb1535f86b137077b326a56ca);
+            
+        
+
+        poly_line_69a46a570ac8fa13996d62c6b62f81d5.bindPopup(popup_d7416b342e4ddae5975ecf88dfc80e2f)
+        ;
+
+        
+    
+    
+            var marker_c22429919d335ece3763f51ec05c1efb = L.marker(
+                [22.33812173740506, 71.36621414306215],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_9ed46201d18e48abba1df2c2c4de3d7e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 400mm, Len: 581m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_c22429919d335ece3763f51ec05c1efb.setIcon(div_icon_9ed46201d18e48abba1df2c2c4de3d7e);
+            
+    
+            var poly_line_154a6273f7be547ab3c5ff79c5dbf0bf = L.polyline(
+                [[22.597868838882732, 71.54104730332706], [22.598026985165735, 71.54105119472544], [22.60006555407294, 71.54076558577445], [22.60480679500509, 71.54175270486057], [22.607091932365275, 71.54230175773715], [22.611238964625034, 71.54332320493816], [22.615136544445498, 71.54418285472136], [22.622913733135178, 71.54651108715991]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_0171690b0e5d1cf8c5599a0bbd4ef056 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_eebe45caabb0b8edbc7145f525f14a2a = $(`<div id="html_eebe45caabb0b8edbc7145f525f14a2a" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-46<br>     <b>Start Node:</b> RAJBAI POND<br>     <b>Stop Node:</b> ORIYA POND,SANGOI<br>     <b>HDPE 400mm, Len: 2846m</b>     </div>`)[0];
+                popup_0171690b0e5d1cf8c5599a0bbd4ef056.setContent(html_eebe45caabb0b8edbc7145f525f14a2a);
+            
+        
+
+        poly_line_154a6273f7be547ab3c5ff79c5dbf0bf.bindPopup(popup_0171690b0e5d1cf8c5599a0bbd4ef056)
+        ;
+
+        
+    
+    
+            var marker_55fd74f73ea2dbe697ca822fbaae7892 = L.marker(
+                [22.607091932365275, 71.54230175773715],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_9f1dda423971816e68b48fb5b0466067 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 400mm, Len: 2846m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_55fd74f73ea2dbe697ca822fbaae7892.setIcon(div_icon_9f1dda423971816e68b48fb5b0466067);
+            
+    
+            var poly_line_f113f583042dd2134b3349c16a4105d1 = L.polyline(
+                [[22.578582938501707, 71.54237029019566], [22.574318707739913, 71.53404574047745], [22.573787201595493, 71.53254896224715], [22.572699321085757, 71.53170421392474], [22.57252394454905, 71.5313957174473], [22.572381485353453, 71.53040986749657]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_1858366f7beda73584918ec9aa699f8c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ad10c9e4117ec0f1900b778e94b90be8 = $(`<div id="html_ad10c9e4117ec0f1900b778e94b90be8" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-47<br>     <b>Start Node:</b> J-128<br>     <b>Stop Node:</b> SHRIJI NAGAR POND<br>     <b>HDPE 355mm, Len: 1431m</b>     </div>`)[0];
+                popup_1858366f7beda73584918ec9aa699f8c.setContent(html_ad10c9e4117ec0f1900b778e94b90be8);
+            
+        
+
+        poly_line_f113f583042dd2134b3349c16a4105d1.bindPopup(popup_1858366f7beda73584918ec9aa699f8c)
+        ;
+
+        
+    
+    
+            var marker_ff567e7ea08eacccc8dc85e97162d45d = L.marker(
+                [22.572699321085757, 71.53170421392474],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_3ee7703cbc9dea96ce4c34c9ba57d2a3 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 355mm, Len: 1431m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_ff567e7ea08eacccc8dc85e97162d45d.setIcon(div_icon_3ee7703cbc9dea96ce4c34c9ba57d2a3);
+            
+    
+            var poly_line_57a1f7329d4ad3d01dc8d198edfdfa60 = L.polyline(
+                [[22.622913733135178, 71.54651108715991], [22.627632866781294, 71.54799571324828], [22.627671809339606, 71.54800181696844], [22.627920450514175, 71.5480694054166]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_0f62108343a1f7e068fdeb1235029f09 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9929ac15bb830c35e97d42dbebe9a338 = $(`<div id="html_9929ac15bb830c35e97d42dbebe9a338" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-48<br>     <b>Start Node:</b> J-129<br>     <b>Stop Node:</b> UMAPUR<br>     <b>HDPE 355mm, Len: 577m</b>     </div>`)[0];
+                popup_0f62108343a1f7e068fdeb1235029f09.setContent(html_9929ac15bb830c35e97d42dbebe9a338);
+            
+        
+
+        poly_line_57a1f7329d4ad3d01dc8d198edfdfa60.bindPopup(popup_0f62108343a1f7e068fdeb1235029f09)
+        ;
+
+        
+    
+    
+            var marker_b7c649979c6e346d7bd739589d30bc9b = L.marker(
+                [22.627671809339606, 71.54800181696844],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_86a8901b9531c16354db7162574787d7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 355mm, Len: 577m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_b7c649979c6e346d7bd739589d30bc9b.setIcon(div_icon_86a8901b9531c16354db7162574787d7);
+            
+    
+            var poly_line_820eda3ca59993fe1ea14bd345ca742f = L.polyline(
+                [[22.36891332434613, 71.3299894264754], [22.37033121168081, 71.32968847217441], [22.371309950080914, 71.32952905688835], [22.37546114250798, 71.32737223521028], [22.379562351152018, 71.32550567079103], [22.384240001418384, 71.3256749825056]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_30fc845950ccc542046efb2b9e64110b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4e04b16bb84fa8958e356e1e8f82135f = $(`<div id="html_4e04b16bb84fa8958e356e1e8f82135f" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-49<br>     <b>Start Node:</b> J-6<br>     <b>Stop Node:</b> LIMBALA KHARA POND,NADALA<br>     <b>HDPE 315mm, Len: 1792m</b>     </div>`)[0];
+                popup_30fc845950ccc542046efb2b9e64110b.setContent(html_4e04b16bb84fa8958e356e1e8f82135f);
+            
+        
+
+        poly_line_820eda3ca59993fe1ea14bd345ca742f.bindPopup(popup_30fc845950ccc542046efb2b9e64110b)
+        ;
+
+        
+    
+    
+            var marker_5d6e525bddad38db5a4b86b1907eb492 = L.marker(
+                [22.37546114250798, 71.32737223521028],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_0f847fdab5e9970ae1f4de2e84f5d7ba = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1792m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_5d6e525bddad38db5a4b86b1907eb492.setIcon(div_icon_0f847fdab5e9970ae1f4de2e84f5d7ba);
+            
+    
+            var poly_line_be7430922d01d0a46faef23cbda47c82 = L.polyline(
+                [[22.376056063439968, 71.40859008617164], [22.377600701361075, 71.40701834090089]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_f90e84b19b0d763f6e86ac7df437004d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b02fb4ed471f8b5b8e6feb85643e8b94 = $(`<div id="html_b02fb4ed471f8b5b8e6feb85643e8b94" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-50<br>     <b>Start Node:</b> J-12<br>     <b>Stop Node:</b> LIMBALA<br>     <b>HDPE 315mm, Len: 236m</b>     </div>`)[0];
+                popup_f90e84b19b0d763f6e86ac7df437004d.setContent(html_b02fb4ed471f8b5b8e6feb85643e8b94);
+            
+        
+
+        poly_line_be7430922d01d0a46faef23cbda47c82.bindPopup(popup_f90e84b19b0d763f6e86ac7df437004d)
+        ;
+
+        
+    
+    
+            var marker_25daa75888aa940561ab0d417a8b444d = L.marker(
+                [22.377600701361075, 71.40701834090089],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_b728b04e3e1f38ff4f2121c3465a2155 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 236m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_25daa75888aa940561ab0d417a8b444d.setIcon(div_icon_b728b04e3e1f38ff4f2121c3465a2155);
+            
+    
+            var poly_line_833820ac42d740442d8ebdf0af22f9c8 = L.polyline(
+                [[22.377600701361075, 71.40701834090089], [22.381760435495245, 71.40293979708784], [22.385647200360367, 71.40213427649925], [22.389774712865076, 71.39984345363786], [22.392134834760515, 71.39698953181858], [22.3915680303726, 71.39321697050019]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_c1e235db254c593d5796dd703a20f8a5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_30f318b6dda2568ecf59fe3106a50c45 = $(`<div id="html_30f318b6dda2568ecf59fe3106a50c45" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-51<br>     <b>Start Node:</b> DHAJALA<br>     <b>Stop Node:</b> J-141<br>     <b>HDPE 315mm, Len: 2364m</b>     </div>`)[0];
+                popup_c1e235db254c593d5796dd703a20f8a5.setContent(html_30f318b6dda2568ecf59fe3106a50c45);
+            
+        
+
+        poly_line_833820ac42d740442d8ebdf0af22f9c8.bindPopup(popup_c1e235db254c593d5796dd703a20f8a5)
+        ;
+
+        
+    
+    
+            var marker_f9e0edebd6f7f6f82516f67f40df63b2 = L.marker(
+                [22.389774712865076, 71.39984345363786],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_c8e1d1b57c51f2e87b11684569d42c81 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 2364m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_f9e0edebd6f7f6f82516f67f40df63b2.setIcon(div_icon_c8e1d1b57c51f2e87b11684569d42c81);
+            
+    
+            var poly_line_354cba7a3b480810d029c8c68994ec11 = L.polyline(
+                [[22.367851651126262, 71.36658336281607], [22.372820283831572, 71.36429878103658], [22.37554865907737, 71.36412085256151], [22.377072399908446, 71.36359225791378], [22.37798857897113, 71.3632883440229], [22.37896536857106, 71.36288309963783], [22.38248429468062, 71.36223699099389], [22.384383267680242, 71.36049062332167], [22.38757791223682, 71.36002891177328], [22.392867653430667, 71.35891731681039]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_a13d33bfc0c2608334cd94e0942d3649 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_794ccd99c15ff5b160bb4e8fab022672 = $(`<div id="html_794ccd99c15ff5b160bb4e8fab022672" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-52<br>     <b>Start Node:</b> J-16<br>     <b>Stop Node:</b> OVENGADH<br>     <b>HDPE 315mm, Len: 2927m</b>     </div>`)[0];
+                popup_a13d33bfc0c2608334cd94e0942d3649.setContent(html_794ccd99c15ff5b160bb4e8fab022672);
+            
+        
+
+        poly_line_354cba7a3b480810d029c8c68994ec11.bindPopup(popup_a13d33bfc0c2608334cd94e0942d3649)
+        ;
+
+        
+    
+    
+            var marker_98e76a62e2e5b623397bc9af2651c12b = L.marker(
+                [22.37896536857106, 71.36288309963783],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_16a46609455042bf04a60702f8a4e81a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 2927m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_98e76a62e2e5b623397bc9af2651c12b.setIcon(div_icon_16a46609455042bf04a60702f8a4e81a);
+            
+    
+            var poly_line_847147464b9cfa0590c94fa2f57b8e87 = L.polyline(
+                [[22.344926857075098, 71.36109623547718], [22.34444621889499, 71.36013344117217], [22.343921311176537, 71.35951397994076]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_dd117d9f0ecf35aa73d3ec99306ee522 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_bcc075416d01a236582faa88042c275d = $(`<div id="html_bcc075416d01a236582faa88042c275d" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-53<br>     <b>Start Node:</b> J-20<br>     <b>Stop Node:</b> J-24<br>     <b>HDPE 315mm, Len: 199m</b>     </div>`)[0];
+                popup_dd117d9f0ecf35aa73d3ec99306ee522.setContent(html_bcc075416d01a236582faa88042c275d);
+            
+        
+
+        poly_line_847147464b9cfa0590c94fa2f57b8e87.bindPopup(popup_dd117d9f0ecf35aa73d3ec99306ee522)
+        ;
+
+        
+    
+    
+            var marker_08afde72b4273da4a21ca8ad0902c301 = L.marker(
+                [22.34444621889499, 71.36013344117217],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_07aa5f1d7b742c3e50b7c2c6a66d9497 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 199m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_08afde72b4273da4a21ca8ad0902c301.setIcon(div_icon_07aa5f1d7b742c3e50b7c2c6a66d9497);
+            
+    
+            var poly_line_25a0d9ca194931bf20af79b50625fbb4 = L.polyline(
+                [[22.334455797678878, 71.3682531101428], [22.333226935399285, 71.36829926461746], [22.33230670209179, 71.36848754241782], [22.332003345276267, 71.36852557432114], [22.331239732288765, 71.36884845879482], [22.330339560274055, 71.36914766349912], [22.32977332371788, 71.36961834521652]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_1eef6d7f1de8b55d6acf1a2edf9108e8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b6344bac9d8b0ba27324ac76b481b735 = $(`<div id="html_b6344bac9d8b0ba27324ac76b481b735" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-54<br>     <b>Start Node:</b> J-24<br>     <b>Stop Node:</b> J-121<br>     <b>HDPE 315mm, Len: 548m</b>     </div>`)[0];
+                popup_1eef6d7f1de8b55d6acf1a2edf9108e8.setContent(html_b6344bac9d8b0ba27324ac76b481b735);
+            
+        
+
+        poly_line_25a0d9ca194931bf20af79b50625fbb4.bindPopup(popup_1eef6d7f1de8b55d6acf1a2edf9108e8)
+        ;
+
+        
+    
+    
+            var marker_b2d10b14e29587163830e3bc2dbf42ea = L.marker(
+                [22.332003345276267, 71.36852557432114],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_1654413398cc73ca4a564e54026439e7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 548m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_b2d10b14e29587163830e3bc2dbf42ea.setIcon(div_icon_1654413398cc73ca4a564e54026439e7);
+            
+    
+            var poly_line_bba1a4b9c621fc4c81906abc7d9e67b2 = L.polyline(
+                [[22.32977332371788, 71.36961834521652], [22.328582990111922, 71.3707908236404], [22.327656235527837, 71.37201998674699], [22.326395822815414, 71.3730094532773], [22.323916947778383, 71.3762114079453], [22.323195418774336, 71.37849134454724], [22.32232534136555, 71.38360748986823], [22.319378475974823, 71.38698853809076], [22.315287477820362, 71.38929258418293], [22.313357800155806, 71.3904449211418], [22.311853321097203, 71.39135941473963], [22.3091493418857, 71.39266774992937], [22.308808244760176, 71.39398700587196], [22.308203759582977, 71.39499429961178], [22.30801961405268, 71.39546502931923]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_61be05b3f93df9c4fd12e46b49701bd8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f7a13d9586d11675bee88939c5d85fb7 = $(`<div id="html_f7a13d9586d11675bee88939c5d85fb7" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-55<br>     <b>Start Node:</b> J-26<br>     <b>Stop Node:</b> J-33<br>     <b>HDPE 315mm, Len: 3799m</b>     </div>`)[0];
+                popup_61be05b3f93df9c4fd12e46b49701bd8.setContent(html_f7a13d9586d11675bee88939c5d85fb7);
+            
+        
+
+        poly_line_bba1a4b9c621fc4c81906abc7d9e67b2.bindPopup(popup_61be05b3f93df9c4fd12e46b49701bd8)
+        ;
+
+        
+    
+    
+            var marker_b0ba08b9d6b6d0d994b29d87f193d163 = L.marker(
+                [22.319378475974823, 71.38698853809076],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_237bb614d8436abddaa739b3f4291bb7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 3799m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_b0ba08b9d6b6d0d994b29d87f193d163.setIcon(div_icon_237bb614d8436abddaa739b3f4291bb7);
+            
+    
+            var poly_line_f1e0e6df0c90076476d8d4a2b2f70f6f = L.polyline(
+                [[22.32977332371788, 71.36961834521652], [22.32444512771998, 71.37097083162179], [22.32244967821427, 71.3716137884651]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_78adcfa5a82afbbdce62ad2307da8182 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_92ad92536a64d04e9c54c5619266b02a = $(`<div id="html_92ad92536a64d04e9c54c5619266b02a" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-56<br>     <b>Start Node:</b> J-26<br>     <b>Stop Node:</b> J-46<br>     <b>HDPE 315mm, Len: 837m</b>     </div>`)[0];
+                popup_78adcfa5a82afbbdce62ad2307da8182.setContent(html_92ad92536a64d04e9c54c5619266b02a);
+            
+        
+
+        poly_line_f1e0e6df0c90076476d8d4a2b2f70f6f.bindPopup(popup_78adcfa5a82afbbdce62ad2307da8182)
+        ;
+
+        
+    
+    
+            var marker_f91277d02dc715ce55c4140220df005f = L.marker(
+                [22.32444512771998, 71.37097083162179],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_527ecd66ae282f65656bafa54bf084b3 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 837m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_f91277d02dc715ce55c4140220df005f.setIcon(div_icon_527ecd66ae282f65656bafa54bf084b3);
+            
+    
+            var poly_line_a477ab1196f9e4719de274949e1ef67f = L.polyline(
+                [[22.401679303691985, 71.47029754462729], [22.4002058103062, 71.47101687516556], [22.393878453290977, 71.47598017680632], [22.392008545327617, 71.4776328642615]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_8e097ba66456fc90f172d2a0e74e7331 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_14bffc832e4984693010b7406cea426d = $(`<div id="html_14bffc832e4984693010b7406cea426d" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-57<br>     <b>Start Node:</b> J-29<br>     <b>Stop Node:</b> J-106<br>     <b>HDPE 315mm, Len: 1315m</b>     </div>`)[0];
+                popup_8e097ba66456fc90f172d2a0e74e7331.setContent(html_14bffc832e4984693010b7406cea426d);
+            
+        
+
+        poly_line_a477ab1196f9e4719de274949e1ef67f.bindPopup(popup_8e097ba66456fc90f172d2a0e74e7331)
+        ;
+
+        
+    
+    
+            var marker_0620c99c80d1ec66cef7e62117ec6054 = L.marker(
+                [22.393878453290977, 71.47598017680632],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_f8b26dc114cd89028e7e8f601b124ff5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1315m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_0620c99c80d1ec66cef7e62117ec6054.setIcon(div_icon_f8b26dc114cd89028e7e8f601b124ff5);
+            
+    
+            var poly_line_d2ad5d5383a1c3e6f75ff8fdfd52fd85 = L.polyline(
+                [[22.392008545327617, 71.4776328642615], [22.391177113917326, 71.48214034267363]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_de87b41fb44a4b134164d9716f80b94f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d378997be7a7ea2ab6de6f8c1b5e6f0b = $(`<div id="html_d378997be7a7ea2ab6de6f8c1b5e6f0b" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-58<br>     <b>Start Node:</b> J-31<br>     <b>Stop Node:</b> RAJBAI POND<br>     <b>HDPE 315mm, Len: 473m</b>     </div>`)[0];
+                popup_de87b41fb44a4b134164d9716f80b94f.setContent(html_d378997be7a7ea2ab6de6f8c1b5e6f0b);
+            
+        
+
+        poly_line_d2ad5d5383a1c3e6f75ff8fdfd52fd85.bindPopup(popup_de87b41fb44a4b134164d9716f80b94f)
+        ;
+
+        
+    
+    
+            var marker_10e717ba643815705a6529703be53d1d = L.marker(
+                [22.391177113917326, 71.48214034267363],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_3c209506321bbfef51f39f4f22a29530 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 473m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_10e717ba643815705a6529703be53d1d.setIcon(div_icon_3c209506321bbfef51f39f4f22a29530);
+            
+    
+            var poly_line_d63eaef832ea7f41e8b39a4e365fa9e6 = L.polyline(
+                [[22.392008545327617, 71.4776328642615], [22.39074219032622, 71.47659450651092], [22.388612268109895, 71.47584827843176], [22.388297904688695, 71.47576230120208]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_1bfa39ae2901dcab82b219ef39156f5c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_507807433a252a64d81ac2a53b675340 = $(`<div id="html_507807433a252a64d81ac2a53b675340" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-59<br>     <b>Start Node:</b> J-31<br>     <b>Stop Node:</b> J-4<br>     <b>HDPE 315mm, Len: 461m</b>     </div>`)[0];
+                popup_1bfa39ae2901dcab82b219ef39156f5c.setContent(html_507807433a252a64d81ac2a53b675340);
+            
+        
+
+        poly_line_d63eaef832ea7f41e8b39a4e365fa9e6.bindPopup(popup_1bfa39ae2901dcab82b219ef39156f5c)
+        ;
+
+        
+    
+    
+            var marker_7aca46345b978bf90e57ca0ab76c3b8c = L.marker(
+                [22.388612268109895, 71.47584827843176],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_4d64f18216fb881bb7778639dc523836 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 461m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7aca46345b978bf90e57ca0ab76c3b8c.setIcon(div_icon_4d64f18216fb881bb7778639dc523836);
+            
+    
+            var poly_line_bfce44db5b6357a0a56a221ff41d9c83 = L.polyline(
+                [[22.55001209972339, 71.58537432458449], [22.555903247718714, 71.5914707983546], [22.562702429947688, 71.59957572929666], [22.565794811566214, 71.60240256269775], [22.567632672846354, 71.60464278011544], [22.57124878339455, 71.61084773679937]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_6ae524950db75540848a914507f44325 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_de0ddde5328b8eba75d6c9a8e791c6d1 = $(`<div id="html_de0ddde5328b8eba75d6c9a8e791c6d1" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-60<br>     <b>Start Node:</b> J-33<br>     <b>Stop Node:</b> NAVANIYA<br>     <b>HDPE 315mm, Len: 3540m</b>     </div>`)[0];
+                popup_6ae524950db75540848a914507f44325.setContent(html_de0ddde5328b8eba75d6c9a8e791c6d1);
+            
+        
+
+        poly_line_bfce44db5b6357a0a56a221ff41d9c83.bindPopup(popup_6ae524950db75540848a914507f44325)
+        ;
+
+        
+    
+    
+            var marker_1ce2bf255d604368525a132667e7ad7c = L.marker(
+                [22.565794811566214, 71.60240256269775],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_e6ae62b3560cdd710096ff7d916a201f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 3540m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_1ce2bf255d604368525a132667e7ad7c.setIcon(div_icon_e6ae62b3560cdd710096ff7d916a201f);
+            
+    
+            var poly_line_60aa26bc3036e6ab63dd298dc9f9a480 = L.polyline(
+                [[22.597868838882732, 71.54104730332706], [22.597933804409287, 71.54078237990879], [22.597763801437917, 71.53909790073315], [22.598184088730687, 71.53619258182121], [22.598190619989367, 71.53588261993688], [22.59836449714359, 71.53492154656881], [22.598656989854906, 71.53295667959301], [22.598963146161676, 71.53114763871275], [22.598891332754928, 71.52991171286902], [22.598850714803568, 71.52868787928672], [22.598881282458233, 71.52778575101648], [22.598876576794975, 71.52636674633216], [22.59901317287478, 71.52489492154629], [22.598281461714226, 71.52326030359671], [22.597864266269394, 71.52163184886223], [22.59771722432362, 71.52036371747349], [22.59783682523372, 71.5196558741285], [22.59797523191523, 71.51873299387938]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_690be04f39a79af794338c7b8f774c0d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a01e85a25c74f8b5186b3964a106f0ad = $(`<div id="html_a01e85a25c74f8b5186b3964a106f0ad" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-61<br>     <b>Start Node:</b> RAJBAI POND<br>     <b>Stop Node:</b> J-42<br>     <b>HDPE 315mm, Len: 2338m</b>     </div>`)[0];
+                popup_690be04f39a79af794338c7b8f774c0d.setContent(html_a01e85a25c74f8b5186b3964a106f0ad);
+            
+        
+
+        poly_line_60aa26bc3036e6ab63dd298dc9f9a480.bindPopup(popup_690be04f39a79af794338c7b8f774c0d)
+        ;
+
+        
+    
+    
+            var marker_91bcc270d1ee315c95380d6146f0382c = L.marker(
+                [22.598850714803568, 71.52868787928672],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_19b48df8ef53c51c35ec025187c5eebc = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 2338m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_91bcc270d1ee315c95380d6146f0382c.setIcon(div_icon_19b48df8ef53c51c35ec025187c5eebc);
+            
+    
+            var poly_line_fa157db743301b953feebd0f1b559f75 = L.polyline(
+                [[22.64615413764021, 71.55230147032066], [22.646384094514136, 71.55241039714369], [22.65562026269688, 71.55614663185159], [22.668460487459868, 71.56280612890785]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_45e9dea5ee645430faa5270ffbfe7f11 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_093cba0d56f7317d0801ab96b28896d3 = $(`<div id="html_093cba0d56f7317d0801ab96b28896d3" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-62<br>     <b>Start Node:</b> J-44<br>     <b>Stop Node:</b> J-10<br>     <b>HDPE 315mm, Len: 2700m</b>     </div>`)[0];
+                popup_45e9dea5ee645430faa5270ffbfe7f11.setContent(html_093cba0d56f7317d0801ab96b28896d3);
+            
+        
+
+        poly_line_fa157db743301b953feebd0f1b559f75.bindPopup(popup_45e9dea5ee645430faa5270ffbfe7f11)
+        ;
+
+        
+    
+    
+            var marker_ce26b85bb177c69d36e4bfb2ac504280 = L.marker(
+                [22.65562026269688, 71.55614663185159],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_012a11b53c5e8bd1e15e24767a73b2bc = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 2700m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_ce26b85bb177c69d36e4bfb2ac504280.setIcon(div_icon_012a11b53c5e8bd1e15e24767a73b2bc);
+            
+    
+            var poly_line_3123ee30ea0586bfc7c9434f7505a9c1 = L.polyline(
+                [[22.64615413764021, 71.55230147032066], [22.64836604757961, 71.5641177309399], [22.649959588613875, 71.57140994804048], [22.651682323696487, 71.57464109341902], [22.65486439551416, 71.58676027306606], [22.655731848450664, 71.58893964526442], [22.65659248088983, 71.59127969221507], [22.657050685883057, 71.5923371183098], [22.65767082663431, 71.5946611107903], [22.658100866922116, 71.59623633063985], [22.658746259113308, 71.5984985256104], [22.659392694994825, 71.60074807559761], [22.660326036319983, 71.60400894761307], [22.66105946666036, 71.60601405510613], [22.663489453225157, 71.61263960465698], [22.66470686820559, 71.61629090394315]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_0cc99e957cf00bab45cab94d8db6acd1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_47b5f44ee4e713d968fbf24053345712 = $(`<div id="html_47b5f44ee4e713d968fbf24053345712" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-63<br>     <b>Start Node:</b> J-44<br>     <b>Stop Node:</b> SHANTI NAGAR POND<br>     <b>HDPE 315mm, Len: 6918m</b>     </div>`)[0];
+                popup_0cc99e957cf00bab45cab94d8db6acd1.setContent(html_47b5f44ee4e713d968fbf24053345712);
+            
+        
+
+        poly_line_3123ee30ea0586bfc7c9434f7505a9c1.bindPopup(popup_0cc99e957cf00bab45cab94d8db6acd1)
+        ;
+
+        
+    
+    
+            var marker_30b2b3b0ce6ebedd8361edd0620c3741 = L.marker(
+                [22.65767082663431, 71.5946611107903],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_d021634b24b091c399fbad6802a622f6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 6918m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_30b2b3b0ce6ebedd8361edd0620c3741.setIcon(div_icon_d021634b24b091c399fbad6802a622f6);
+            
+    
+            var poly_line_fa343c48a1913c51d6cfe73e550aaea3 = L.polyline(
+                [[22.453642992332593, 71.5596485368317], [22.458319830181843, 71.55595385230517], [22.461821243775024, 71.55405098052275]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_19b972bf533e34d5171df1c3b78212bc = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_70aa4dbf2acf9e43a5d24509337f19ca = $(`<div id="html_70aa4dbf2acf9e43a5d24509337f19ca" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-64<br>     <b>Start Node:</b> J-46<br>     <b>Stop Node:</b> THORIYALI BHOGAVO<br>     <b>HDPE 315mm, Len: 1077m</b>     </div>`)[0];
+                popup_19b972bf533e34d5171df1c3b78212bc.setContent(html_70aa4dbf2acf9e43a5d24509337f19ca);
+            
+        
+
+        poly_line_fa343c48a1913c51d6cfe73e550aaea3.bindPopup(popup_19b972bf533e34d5171df1c3b78212bc)
+        ;
+
+        
+    
+    
+            var marker_2a906c283966b401cce5bc3f48906740 = L.marker(
+                [22.458319830181843, 71.55595385230517],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_377b1290fcd9b7002293a20e3c2ba44a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1077m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_2a906c283966b401cce5bc3f48906740.setIcon(div_icon_377b1290fcd9b7002293a20e3c2ba44a);
+            
+    
+            var poly_line_cee681def707796e5e25227f0c6a72b8 = L.polyline(
+                [[22.433087288294658, 71.53806832929753], [22.436840667409427, 71.52602392707534], [22.442363412465294, 71.50445946752072], [22.443057189072903, 71.49980993366016]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_e6b31a4c5428dc3b7bc85d2a716af6a7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_67ba975120b07d046a18fd1d6a78b9c1 = $(`<div id="html_67ba975120b07d046a18fd1d6a78b9c1" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-65<br>     <b>Start Node:</b> J-48<br>     <b>Stop Node:</b> J-77<br>     <b>HDPE 315mm, Len: 4097m</b>     </div>`)[0];
+                popup_e6b31a4c5428dc3b7bc85d2a716af6a7.setContent(html_67ba975120b07d046a18fd1d6a78b9c1);
+            
+        
+
+        poly_line_cee681def707796e5e25227f0c6a72b8.bindPopup(popup_e6b31a4c5428dc3b7bc85d2a716af6a7)
+        ;
+
+        
+    
+    
+            var marker_3fdd2c276f780e62477e554c0e580b1d = L.marker(
+                [22.442363412465294, 71.50445946752072],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_ff7897f34250e9d13d12c36293a537bb = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 4097m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_3fdd2c276f780e62477e554c0e580b1d.setIcon(div_icon_ff7897f34250e9d13d12c36293a537bb);
+            
+    
+            var poly_line_ae2701fe565bf9b3cd45844da332d1d4 = L.polyline(
+                [[22.631448959359624, 71.56764793538609], [22.632387294721447, 71.5705114958032], [22.633322946487365, 71.57305193708042], [22.633781031122485, 71.57460912068831], [22.634124766007176, 71.57575995066318], [22.636019237632382, 71.58125904706819], [22.637416262407417, 71.58239889484837]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_0c79c1d8c8368820f97f7318f44284ca = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2158e050a72454441561213b13725c75 = $(`<div id="html_2158e050a72454441561213b13725c75" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-66<br>     <b>Start Node:</b> CHANPAR<br>     <b>Stop Node:</b> FULGRAM<br>     <b>HDPE 315mm, Len: 1683m</b>     </div>`)[0];
+                popup_0c79c1d8c8368820f97f7318f44284ca.setContent(html_2158e050a72454441561213b13725c75);
+            
+        
+
+        poly_line_ae2701fe565bf9b3cd45844da332d1d4.bindPopup(popup_0c79c1d8c8368820f97f7318f44284ca)
+        ;
+
+        
+    
+    
+            var marker_90eb245a99f8564075e77b0895b259b0 = L.marker(
+                [22.633781031122485, 71.57460912068831],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_3c45b679a06bc13b816d3a24dbb573b8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1683m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_90eb245a99f8564075e77b0895b259b0.setIcon(div_icon_3c45b679a06bc13b816d3a24dbb573b8);
+            
+    
+            var poly_line_bc90152e766dde08f175dfab582b2eff = L.polyline(
+                [[22.589608900957423, 71.56854942855908], [22.589666182005793, 71.56884187459241], [22.590612873261872, 71.57197444711502], [22.593835780813905, 71.57596804213767], [22.59670445274645, 71.58107706139087], [22.59870659525814, 71.58526370046008], [22.600022586782146, 71.58889474781503], [22.602855262606237, 71.59447311128227], [22.606129964816812, 71.59976889416579], [22.60908937473616, 71.60337187625288], [22.611478278414673, 71.60458518625747]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_c65724f55167511a4ca3c4cf15f0786d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8760bede249950f4130607d3007133ed = $(`<div id="html_8760bede249950f4130607d3007133ed" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-67<br>     <b>Start Node:</b> RAMPARA<br>     <b>Stop Node:</b> J-37<br>     <b>HDPE 315mm, Len: 4510m</b>     </div>`)[0];
+                popup_c65724f55167511a4ca3c4cf15f0786d.setContent(html_8760bede249950f4130607d3007133ed);
+            
+        
+
+        poly_line_bc90152e766dde08f175dfab582b2eff.bindPopup(popup_c65724f55167511a4ca3c4cf15f0786d)
+        ;
+
+        
+    
+    
+            var marker_e994b39bc2fe4ed9d783e593e9c16978 = L.marker(
+                [22.59870659525814, 71.58526370046008],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_95a2c9122cbc817b1f804d79729bd995 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 4510m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_e994b39bc2fe4ed9d783e593e9c16978.setIcon(div_icon_95a2c9122cbc817b1f804d79729bd995);
+            
+    
+            var poly_line_92553581161275ee0a206d115a6d65c9 = L.polyline(
+                [[22.433087288294658, 71.53806832929753], [22.43109062204712, 71.53923466463597], [22.430046251537092, 71.54024014556562], [22.42949179671531, 71.54079295438947], [22.42779314103882, 71.54360889541664]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_b877f386a1f58f641bc611ff95c30420 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e1ca66bb92e69d7d3cfb57ed34d3dfce = $(`<div id="html_e1ca66bb92e69d7d3cfb57ed34d3dfce" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-68<br>     <b>Start Node:</b> J-48<br>     <b>Stop Node:</b> PS-2<br>     <b>HDPE 315mm, Len: 836m</b>     </div>`)[0];
+                popup_b877f386a1f58f641bc611ff95c30420.setContent(html_e1ca66bb92e69d7d3cfb57ed34d3dfce);
+            
+        
+
+        poly_line_92553581161275ee0a206d115a6d65c9.bindPopup(popup_b877f386a1f58f641bc611ff95c30420)
+        ;
+
+        
+    
+    
+            var marker_df149c44604f847f7bb049a08769c1bd = L.marker(
+                [22.430046251537092, 71.54024014556562],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_f3bbb11a70d4f5582405087b3519548b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 836m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_df149c44604f847f7bb049a08769c1bd.setIcon(div_icon_f3bbb11a70d4f5582405087b3519548b);
+            
+    
+            var poly_line_c6ba69d2f71d8288dddb4a91e32d1cac = L.polyline(
+                [[22.40424320808537, 71.50302878392766], [22.402247419409534, 71.50425242314736]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_9049c2c154f682d962988bc94f9eb09b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5c136d1f17d5aa531d084b4f5f605514 = $(`<div id="html_5c136d1f17d5aa531d084b4f5f605514" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-69<br>     <b>Start Node:</b> J-53<br>     <b>Stop Node:</b> J-44<br>     <b>HDPE 315mm, Len: 255m</b>     </div>`)[0];
+                popup_9049c2c154f682d962988bc94f9eb09b.setContent(html_5c136d1f17d5aa531d084b4f5f605514);
+            
+        
+
+        poly_line_c6ba69d2f71d8288dddb4a91e32d1cac.bindPopup(popup_9049c2c154f682d962988bc94f9eb09b)
+        ;
+
+        
+    
+    
+            var marker_7422f4bfaa4fdac6886268a24fb794f4 = L.marker(
+                [22.402247419409534, 71.50425242314736],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_efb0df92660411d84df1831ce4f0c8ed = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 255m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7422f4bfaa4fdac6886268a24fb794f4.setIcon(div_icon_efb0df92660411d84df1831ce4f0c8ed);
+            
+    
+            var poly_line_b0fa53e84125e99c27280e660c696cc9 = L.polyline(
+                [[22.404262099380638, 71.48878779283012], [22.401856663124956, 71.48899068635201], [22.400941062544867, 71.48918385991263], [22.398695198140924, 71.49067461543991]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_81497470d042c69e8f842a47f4fc0459 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_716819b3287b81f2a806b241b09f4199 = $(`<div id="html_716819b3287b81f2a806b241b09f4199" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-70<br>     <b>Start Node:</b> J-55<br>     <b>Stop Node:</b> J-20<br>     <b>HDPE 315mm, Len: 663m</b>     </div>`)[0];
+                popup_81497470d042c69e8f842a47f4fc0459.setContent(html_716819b3287b81f2a806b241b09f4199);
+            
+        
+
+        poly_line_b0fa53e84125e99c27280e660c696cc9.bindPopup(popup_81497470d042c69e8f842a47f4fc0459)
+        ;
+
+        
+    
+    
+            var marker_2bced9a2f7851ed0aa8d218ce928728d = L.marker(
+                [22.400941062544867, 71.48918385991263],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_86db495e204ba75045f565e61bfd31de = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 663m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_2bced9a2f7851ed0aa8d218ce928728d.setIcon(div_icon_86db495e204ba75045f565e61bfd31de);
+            
+    
+            var poly_line_642fe384b498b28408652d8cec589608 = L.polyline(
+                [[22.398695198140924, 71.49067461543991], [22.391898512651814, 71.49516456499596], [22.39152336044009, 71.49504202124827]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_4ceb77b28c2fe3cef61b6491d276de88 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_463d879a508641149555d50b17d5d54e = $(`<div id="html_463d879a508641149555d50b17d5d54e" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-71<br>     <b>Start Node:</b> SHRIJI NAGAR POND<br>     <b>Stop Node:</b> J-142<br>     <b>HDPE 315mm, Len: 927m</b>     </div>`)[0];
+                popup_4ceb77b28c2fe3cef61b6491d276de88.setContent(html_463d879a508641149555d50b17d5d54e);
+            
+        
+
+        poly_line_642fe384b498b28408652d8cec589608.bindPopup(popup_4ceb77b28c2fe3cef61b6491d276de88)
+        ;
+
+        
+    
+    
+            var marker_7fbf12b830cdc906d2b96458f79dda00 = L.marker(
+                [22.391898512651814, 71.49516456499596],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_426ff8a886a2324297e791a52c35473b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 927m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7fbf12b830cdc906d2b96458f79dda00.setIcon(div_icon_426ff8a886a2324297e791a52c35473b);
+            
+    
+            var poly_line_aa176e8b3d861fa6f10ba9e782711259 = L.polyline(
+                [[22.377653074477116, 71.45566194379401], [22.377085755174818, 71.4554408538844], [22.374510934384865, 71.45372233113697], [22.370916797452143, 71.45193248730004]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_ef1a022d9dd9651502bc856bd30b0765 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f75c48fac455c13decbb14223fe28854 = $(`<div id="html_f75c48fac455c13decbb14223fe28854" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-72<br>     <b>Start Node:</b> NOLI,LAKHAVAD POND<br>     <b>Stop Node:</b> J-75<br>     <b>HDPE 315mm, Len: 841m</b>     </div>`)[0];
+                popup_ef1a022d9dd9651502bc856bd30b0765.setContent(html_f75c48fac455c13decbb14223fe28854);
+            
+        
+
+        poly_line_aa176e8b3d861fa6f10ba9e782711259.bindPopup(popup_ef1a022d9dd9651502bc856bd30b0765)
+        ;
+
+        
+    
+    
+            var marker_645c9be99867b34d86d4c254cbe101e3 = L.marker(
+                [22.374510934384865, 71.45372233113697],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_af8a93ac5fea864239fd505b283200f8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 841m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_645c9be99867b34d86d4c254cbe101e3.setIcon(div_icon_af8a93ac5fea864239fd505b283200f8);
+            
+    
+            var poly_line_9bf5e9e2d4a70a9e65fac95bf140bae3 = L.polyline(
+                [[22.370916797452143, 71.45193248730004], [22.37060707661347, 71.45105599424502], [22.370217659148523, 71.44982008288602], [22.36873084560496, 71.44756541976219], [22.365365261445483, 71.44429511410891], [22.36363083297028, 71.44137793979934], [22.357275551669435, 71.43430718385112]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_21ecc3e662f664a1cb29e2438c8d7fb0 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9a4c1cf117f0137d6c29f0f0d3db7ab3 = $(`<div id="html_9a4c1cf117f0137d6c29f0f0d3db7ab3" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-73<br>     <b>Start Node:</b> J-75<br>     <b>Stop Node:</b> VANTA VANCHH<br>     <b>HDPE 315mm, Len: 2388m</b>     </div>`)[0];
+                popup_21ecc3e662f664a1cb29e2438c8d7fb0.setContent(html_9a4c1cf117f0137d6c29f0f0d3db7ab3);
+            
+        
+
+        poly_line_9bf5e9e2d4a70a9e65fac95bf140bae3.bindPopup(popup_21ecc3e662f664a1cb29e2438c8d7fb0)
+        ;
+
+        
+    
+    
+            var marker_31383d514e668996b7374796b51d74f2 = L.marker(
+                [22.36873084560496, 71.44756541976219],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_f0c353137a09d99c3fa73d6e5d7a16b9 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 2388m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_31383d514e668996b7374796b51d74f2.setIcon(div_icon_f0c353137a09d99c3fa73d6e5d7a16b9);
+            
+    
+            var poly_line_0c2e2c93b17607c53718df14708321e0 = L.polyline(
+                [[22.370916797452143, 71.45193248730004], [22.36996189474788, 71.45184788934723], [22.36889044888485, 71.45175663577707]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_5b97b5e08795b47a4804af47347a7a16 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_390a5ba3bdbbf840f64c659df5a4afaa = $(`<div id="html_390a5ba3bdbbf840f64c659df5a4afaa" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-74<br>     <b>Start Node:</b> J-75<br>     <b>Stop Node:</b> J-120<br>     <b>HDPE 315mm, Len: 225m</b>     </div>`)[0];
+                popup_5b97b5e08795b47a4804af47347a7a16.setContent(html_390a5ba3bdbbf840f64c659df5a4afaa);
+            
+        
+
+        poly_line_0c2e2c93b17607c53718df14708321e0.bindPopup(popup_5b97b5e08795b47a4804af47347a7a16)
+        ;
+
+        
+    
+    
+            var marker_9ec788b057ad189d8e63c2273b1ded7e = L.marker(
+                [22.36996189474788, 71.45184788934723],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_d04aff5b97a93e9f019f91db9b6ee35f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 225m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_9ec788b057ad189d8e63c2273b1ded7e.setIcon(div_icon_d04aff5b97a93e9f019f91db9b6ee35f);
+            
+    
+            var poly_line_33c626043b8f00228a6d95368fba4b9a = L.polyline(
+                [[22.334455797678878, 71.3682531101428], [22.3341800938242, 71.37463382244717], [22.334158931948004, 71.37597558686267], [22.3349180128328, 71.38235979498049]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_f267936c1070e524dbc6cc3cc4094ad5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2ed27470158a6a655da85499bedb5148 = $(`<div id="html_2ed27470158a6a655da85499bedb5148" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-75<br>     <b>Start Node:</b> J-24<br>     <b>Stop Node:</b> J-108<br>     <b>HDPE 315mm, Len: 1460m</b>     </div>`)[0];
+                popup_f267936c1070e524dbc6cc3cc4094ad5.setContent(html_2ed27470158a6a655da85499bedb5148);
+            
+        
+
+        poly_line_33c626043b8f00228a6d95368fba4b9a.bindPopup(popup_f267936c1070e524dbc6cc3cc4094ad5)
+        ;
+
+        
+    
+    
+            var marker_7d3b95aa30d1f1ca3630bff900fc4c11 = L.marker(
+                [22.334158931948004, 71.37597558686267],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_8cd3a529d00d71274e707938f42e9242 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1460m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_7d3b95aa30d1f1ca3630bff900fc4c11.setIcon(div_icon_8cd3a529d00d71274e707938f42e9242);
+            
+    
+            var poly_line_68ae64a7b00907c5d307cbd4001665d9 = L.polyline(
+                [[22.627920450514175, 71.5480694054166], [22.628245862395097, 71.55131361109508], [22.6284710821276, 71.55663219286862], [22.631448959359624, 71.56764793538609]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_b3ef413e613993795f61a7f8f32febc9 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_97fc8a12183b002005cff28215633dc4 = $(`<div id="html_97fc8a12183b002005cff28215633dc4" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-76<br>     <b>Start Node:</b> J-42<br>     <b>Stop Node:</b> NIMBHANI DAM<br>     <b>HDPE 315mm, Len: 2063m</b>     </div>`)[0];
+                popup_b3ef413e613993795f61a7f8f32febc9.setContent(html_97fc8a12183b002005cff28215633dc4);
+            
+        
+
+        poly_line_68ae64a7b00907c5d307cbd4001665d9.bindPopup(popup_b3ef413e613993795f61a7f8f32febc9)
+        ;
+
+        
+    
+    
+            var marker_5bf2d385ecc43ea6be5bdb455343a680 = L.marker(
+                [22.6284710821276, 71.55663219286862],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_190e07c59e6fb3134cda951f17a434ee = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 2063m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_5bf2d385ecc43ea6be5bdb455343a680.setIcon(div_icon_190e07c59e6fb3134cda951f17a434ee);
+            
+    
+            var poly_line_1563169b7d51649b91ba33ed2cecc580 = L.polyline(
+                [[22.627920450514175, 71.5480694054166], [22.62913240487281, 71.54843492943445], [22.642592103393074, 71.55029722684206], [22.64283998918122, 71.55033263688219]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_2a577bf5cb3a6df3b2690d5f62a6da8e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_c9c91ca73497f71b9624b36890285fb4 = $(`<div id="html_c9c91ca73497f71b9624b36890285fb4" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-77<br>     <b>Start Node:</b> J-42<br>     <b>Stop Node:</b> J-139<br>     <b>HDPE 315mm, Len: 1671m</b>     </div>`)[0];
+                popup_2a577bf5cb3a6df3b2690d5f62a6da8e.setContent(html_c9c91ca73497f71b9624b36890285fb4);
+            
+        
+
+        poly_line_1563169b7d51649b91ba33ed2cecc580.bindPopup(popup_2a577bf5cb3a6df3b2690d5f62a6da8e)
+        ;
+
+        
+    
+    
+            var marker_19d6fbb8820d831fefc8252f89acd29b = L.marker(
+                [22.642592103393074, 71.55029722684206],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_308b372aa81255abd460303f521c7382 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1671m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_19d6fbb8820d831fefc8252f89acd29b.setIcon(div_icon_308b372aa81255abd460303f521c7382);
+            
+    
+            var poly_line_69b95132996fca2bd554f66271417325 = L.polyline(
+                [[22.64283998918122, 71.55033263688219], [22.64615413764021, 71.55230147032066]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_63f24d4f62c03fa21ccf6e07d9e37bb3 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_05b8caf82283617404b3555ff1962f1a = $(`<div id="html_05b8caf82283617404b3555ff1962f1a" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-78<br>     <b>Start Node:</b> MUNJPUR<br>     <b>Stop Node:</b> J-129<br>     <b>HDPE 315mm, Len: 419m</b>     </div>`)[0];
+                popup_63f24d4f62c03fa21ccf6e07d9e37bb3.setContent(html_05b8caf82283617404b3555ff1962f1a);
+            
+        
+
+        poly_line_69b95132996fca2bd554f66271417325.bindPopup(popup_63f24d4f62c03fa21ccf6e07d9e37bb3)
+        ;
+
+        
+    
+    
+            var marker_6aa643c28050e3666aa51afc0e6e3e2f = L.marker(
+                [22.64615413764021, 71.55230147032066],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_7219ab71878ede9f7ffc757394d7226d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 419m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_6aa643c28050e3666aa51afc0e6e3e2f.setIcon(div_icon_7219ab71878ede9f7ffc757394d7226d);
+            
+    
+            var poly_line_087230701b5bbea34a82e02340688797 = L.polyline(
+                [[22.583595102717993, 71.55052051356698], [22.585912771175863, 71.56030441286467], [22.588310949577448, 71.56639860568414], [22.588860550829516, 71.5671009480876], [22.589608900957423, 71.56854942855908]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_7a966c7ec4dbbea99a31c2094ba218bd = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9dfcb19a94e5c5c1c41a74436549e912 = $(`<div id="html_9dfcb19a94e5c5c1c41a74436549e912" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-79<br>     <b>Start Node:</b> J-37<br>     <b>Stop Node:</b> NALIYA<br>     <b>HDPE 315mm, Len: 1985m</b>     </div>`)[0];
+                popup_7a966c7ec4dbbea99a31c2094ba218bd.setContent(html_9dfcb19a94e5c5c1c41a74436549e912);
+            
+        
+
+        poly_line_087230701b5bbea34a82e02340688797.bindPopup(popup_7a966c7ec4dbbea99a31c2094ba218bd)
+        ;
+
+        
+    
+    
+            var marker_e1bba41b2773df359d23ede0123f4eb6 = L.marker(
+                [22.588310949577448, 71.56639860568414],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_00feba350f9c6b5e3d43e097b62bd110 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1985m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_e1bba41b2773df359d23ede0123f4eb6.setIcon(div_icon_00feba350f9c6b5e3d43e097b62bd110);
+            
+    
+            var poly_line_559f47cb15e48700e4f677988bfb7f05 = L.polyline(
+                [[22.432649509678022, 71.45076051758765], [22.42852207241341, 71.45915644826535], [22.428661660118873, 71.45986291417366]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_e6eeb2367536880804e1f38c190a9e91 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8f064f4507a311d4fede2710a69a3c10 = $(`<div id="html_8f064f4507a311d4fede2710a69a3c10" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-80<br>     <b>Start Node:</b> J-77<br>     <b>Stop Node:</b> GUNDIYADA<br>     <b>HDPE 315mm, Len: 1053m</b>     </div>`)[0];
+                popup_e6eeb2367536880804e1f38c190a9e91.setContent(html_8f064f4507a311d4fede2710a69a3c10);
+            
+        
+
+        poly_line_559f47cb15e48700e4f677988bfb7f05.bindPopup(popup_e6eeb2367536880804e1f38c190a9e91)
+        ;
+
+        
+    
+    
+            var marker_81c831c7b8d0cfbda10186b3514109e6 = L.marker(
+                [22.42852207241341, 71.45915644826535],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_f0abe933aa2559980347fb3d42ea64b2 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1053m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_81c831c7b8d0cfbda10186b3514109e6.setIcon(div_icon_f0abe933aa2559980347fb3d42ea64b2);
+            
+    
+            var poly_line_5834f8f41ec87eafea957306bbadd34a = L.polyline(
+                [[22.428661660118873, 71.45986291417366], [22.42869814035176, 71.46008772270973], [22.43233246946324, 71.46381112995756], [22.434710873093493, 71.46800502838664]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_4af2ba23e0aa8581befa47fba76cfe17 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b1720163de8906c952f266beccbf97f9 = $(`<div id="html_b1720163de8906c952f266beccbf97f9" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-81<br>     <b>Start Node:</b> OVENGADH<br>     <b>Stop Node:</b> BHAHERU POND<br>     <b>HDPE 315mm, Len: 1085m</b>     </div>`)[0];
+                popup_4af2ba23e0aa8581befa47fba76cfe17.setContent(html_b1720163de8906c952f266beccbf97f9);
+            
+        
+
+        poly_line_5834f8f41ec87eafea957306bbadd34a.bindPopup(popup_4af2ba23e0aa8581befa47fba76cfe17)
+        ;
+
+        
+    
+    
+            var marker_bc808737b7d085a72811f408f9c0f503 = L.marker(
+                [22.43233246946324, 71.46381112995756],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_290d243c37bfdc930da8804e8607b81a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE 315mm, Len: 1085m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_bc808737b7d085a72811f408f9c0f503.setIcon(div_icon_290d243c37bfdc930da8804e8607b81a);
+            
+    
+            var poly_line_614c7bed25b80538826a758fec7dc295 = L.polyline(
+                [[22.3802245210707, 71.42313088246003], [22.384040775574302, 71.42040439841621], [22.387778528152353, 71.41962349011499], [22.390680735873783, 71.41893505336549], [22.393697988534417, 71.4177912172099], [22.395453015093636, 71.41714122529052]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_e8410cceb8c6782c1eca00928734ec97 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_60e5d329b8daa10be8cdd3b3c02533cb = $(`<div id="html_60e5d329b8daa10be8cdd3b3c02533cb" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-82<br>     <b>Start Node:</b> J-10<br>     <b>Stop Node:</b> J-53<br>     <b>HDPE PN-8 315mm, Len: 1819m</b>     </div>`)[0];
+                popup_e8410cceb8c6782c1eca00928734ec97.setContent(html_60e5d329b8daa10be8cdd3b3c02533cb);
+            
+        
+
+        poly_line_614c7bed25b80538826a758fec7dc295.bindPopup(popup_e8410cceb8c6782c1eca00928734ec97)
+        ;
+
+        
+    
+    
+            var marker_59250aa1ba9f52694f817266fce13229 = L.marker(
+                [22.390680735873783, 71.41893505336549],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_abc5cb305d32fe0eda3efa28fbfc52b5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE PN-8 315mm, Len: 1819m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_59250aa1ba9f52694f817266fce13229.setIcon(div_icon_abc5cb305d32fe0eda3efa28fbfc52b5);
+            
+    
+            var poly_line_2b2b2cb5c5721f5a3b2609c4c51b0e5c = L.polyline(
+                [[22.40224892760095, 71.4417537842039], [22.403966377984993, 71.43730229707205], [22.404775879370483, 71.42935711023453], [22.40559485865439, 71.42509158197429]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+        var popup_9db6da125337dd72d434d6de8ac23ad7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_512b42e3d17e35efecebf3a105071c7e = $(`<div id="html_512b42e3d17e35efecebf3a105071c7e" style="width: 100.0%; height: 100.0%;">     <b>Pipe No:</b> P-83<br>     <b>Start Node:</b> J-139<br>     <b>Stop Node:</b> J-29<br>     <b>HDPE PN-10 315mm, Len: 1768m</b>     </div>`)[0];
+                popup_9db6da125337dd72d434d6de8ac23ad7.setContent(html_512b42e3d17e35efecebf3a105071c7e);
+            
+        
+
+        poly_line_2b2b2cb5c5721f5a3b2609c4c51b0e5c.bindPopup(popup_9db6da125337dd72d434d6de8ac23ad7)
+        ;
+
+        
+    
+    
+            var marker_12c70e73f0319a03429cc1743759f8a3 = L.marker(
+                [22.404775879370483, 71.42935711023453],
+                {
+}
+            ).addTo(map_a2a66bf4af53b111efa86c1a728af8ab);
+        
+    
+            var div_icon_be5ff8e4062fb027818b9f0e8297618c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12px; color: black; font-weight: bold;\"\u003eHDPE PN-10 315mm, Len: 1768m\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+                marker_12c70e73f0319a03429cc1743759f8a3.setIcon(div_icon_be5ff8e4062fb027818b9f0e8297618c);
+            
+</script>
+</html>
